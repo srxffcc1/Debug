@@ -21,7 +21,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 
-import com.cxmax.library.R;
+import com.ssicosm.slime_great_war.R;
+
 //import com.nineoldandroids.view.ViewHelper;
 
 //import com.cxmax.library.listener.ScrollDirectionListener;
@@ -98,6 +99,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         setMargins();
 
         setMeasuredDimension(mWidth, mHeight);
+
 
     }
     boolean needdrawsrc=true;
@@ -177,13 +179,25 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         if (attributeSet != null) {
             initAttributes(context, attributeSet);
         }
+        mOnFloatClickListener=new OnFloatClickListener() {
+            @Override
+            public void floatClick(View view) {
+
+            }
+
+            @Override
+            public void floatCloseClick() {
+
+            }
+        };
     }
 
     private void initAttributes(Context context, AttributeSet attributeSet) {
-        TypedArray attr = getTypedArray(context,attributeSet, R.styleable.FloatingView);
-        if (attr != null){
-            mNeedAnimation = attr.getBoolean(R.styleable.FloatingView_cx_animation,true);
-        }
+//        TypedArray attr = getTypedArray(context,attributeSet, R.styleable.FloatingView);
+//        if (attr != null){
+//            mNeedAnimation = attr.getBoolean(R.styleable.FloatingView_cx_animation,true);
+//        }
+        mNeedAnimation=false;
     }
 
     private TypedArray getTypedArray(Context context, AttributeSet attributeSet, int[] attr) {

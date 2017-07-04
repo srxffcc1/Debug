@@ -14,7 +14,7 @@ import com.ssicosm.slime_great_war.R;
  */
 
 public class UnityPlayerActivity extends Activity {
-    UnityPlayer mUnityPlayer=null;
+    UnityPlayer mUnityPlayer;
     protected void onCreate(Bundle bundle) {
         requestWindowFeature(1);
         super.onCreate(bundle);
@@ -29,9 +29,9 @@ public class UnityPlayerActivity extends Activity {
             public void run() {
                 findViewById(R.id.dragss).setVisibility(View.GONE);
             }
-        },3000);
+        },5000);
     }
     public void start3dmWeb(View view){
-        DebugUtil.start3dmWeb(this);
+        DebugUtil.start3dmWeb1(this);
     }
 }
