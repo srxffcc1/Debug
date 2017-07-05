@@ -10,17 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.unity3d.player.UnityPlayerActivity" android:screenOrientation="landscape">
+        <activity android:name="com.unity3d.player.UnityPlayerActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoDisplay" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="splash" android:scheme="cundong" />
+                <data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>
             </intent-filter>
         </activity>
         <activity android:name="com.debugapplication.TmpActivity" />

@@ -33,6 +33,7 @@ import com.ssicosm.slime_great_war.R;
  * 3.View的点击事件OnTouchEvent的处理
  * Created by CaiXi on 2016/8/23
  */
+@SuppressWarnings("ResourceType")
 public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobalLayoutListener{//, ScrollDirectionListener.ScrollViewListener {
     private final static String TAQ = FloatingView.class.getSimpleName();
     private final static int MAX_WIDTH = 90;
@@ -66,12 +67,10 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     public FloatingView(Context context) {
         this(context, null);
     }
-
     public FloatingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
-
     public FloatingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
@@ -164,7 +163,6 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         },60000);
     }
 
-    @SuppressWarnings("ResourceType")
     private void init(Context context, AttributeSet attributeSet) {
         mVisible = true;
         mContext = context;
@@ -199,7 +197,6 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
 //        }
         mNeedAnimation=false;
     }
-
     private TypedArray getTypedArray(Context context, AttributeSet attributeSet, int[] attr) {
         return context.obtainStyledAttributes(attributeSet, attr, 0, 0);
     }
