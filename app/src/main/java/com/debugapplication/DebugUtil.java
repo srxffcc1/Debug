@@ -63,11 +63,11 @@ public class DebugUtil {
         ((Activity)activity).startActivityForResult(intent,2001);//
     }
     public static void start3dmWeb3(Context activity){
-        start3dmWeb1(activity);
-//        Intent intent = new Intent(activity,TmpActivity.class);
-////Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        ((Activity)activity).startActivityForResult(intent,2001);//
+//        start3dmWeb1(activity);
+        Intent intent = new Intent(activity,WebActivity.class);
+//Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        ((Activity)activity).startActivityForResult(intent,2001);//
     }
     public static void setFloat(final Activity activity){
         DebugHandler.instance().addListener(12357, new DebugHandler.HandlerListener() {
