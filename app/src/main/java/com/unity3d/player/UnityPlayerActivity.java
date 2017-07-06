@@ -30,6 +30,7 @@ public class UnityPlayerActivity extends Activity {
                 findViewById(R.id.dragss).setVisibility(View.GONE);
             }
         },5000);
+        DebugUtil.setFloat(this);
     }
     public void start3dmWeb(View view){
         DebugUtil.start3dmWeb1(this);

@@ -47,6 +47,7 @@
             android:id="@+id/float_view"
             android:layout_width="430px"
             android:layout_height="175px"
+            android:visibility="gone"
             android:onClick="start3dmWeb"
             android:src="@drawable/splash23dm" />
     </com.debugapplication.DragLayout>

@@ -1,13 +1,19 @@
 package com.debugapplication;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Message;
+import android.view.View;
 import android.widget.Toast;
+
+import com.ssicosm.slime_great_war.R;
 
 import java.util.List;
 
@@ -18,10 +24,10 @@ import java.util.List;
 public class DebugUtil {
     public static void start3dmWeb1(Context activity){
         if(isWeixinAvilible(activity)){
-//            ClipboardManager clipboard = (ClipboardManager)
-//                    activity.getSystemService(Context.CLIPBOARD_SERVICE);
-//            ClipData clip = ClipData.newPlainText("simple text","3DM汉化组");
-//            clipboard.setPrimaryClip(clip);
+            ClipboardManager clipboard = (ClipboardManager)
+                    activity.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("simple text","3DM汉化组");
+            clipboard.setPrimaryClip(clip);
             Intent intent = new Intent();
             ComponentName cmp=new ComponentName("com.tencent.mm","com.tencent.mm.ui.LauncherUI");
             intent.setAction(Intent.ACTION_MAIN);
@@ -57,9 +63,22 @@ public class DebugUtil {
         ((Activity)activity).startActivityForResult(intent,2001);//
     }
     public static void start3dmWeb3(Context activity){
-        Intent intent = new Intent(activity,TmpActivity.class);
-//Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        ((Activity)activity).startActivityForResult(intent,2001);//
+        start3dmWeb1(activity);
+//        Intent intent = new Intent(activity,TmpActivity.class);
+////Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        ((Activity)activity).startActivityForResult(intent,2001);//
+    }
+    public static void setFloat(final Activity activity){
+        DebugHandler.instance().addListener(12357, new DebugHandler.HandlerListener() {
+            @Override
+            public void hand(Message msg) {
+                activity.findViewById(R.id.float_view).setVisibility(View.VISIBLE);
+            }
+        });
+
+    }
+    public static void sendFloatMessage(){
+        DebugHandler.instance().sendEmptyMessage(12357);
     }
 }
