@@ -3,6 +3,7 @@
     package="com.ssicosm.slime_great_war">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:debuggable="true"
         android:allowBackup="true"
         android:name="com.debugapplication.ListenerApplication"
         android:icon="@mipmap/ic_launcher"

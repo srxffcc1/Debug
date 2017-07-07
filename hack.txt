@@ -1,3 +1,5 @@
+adb shell am start -D -n packageName/ActivityName
+
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
 
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
