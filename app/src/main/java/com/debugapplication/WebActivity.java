@@ -11,8 +11,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
-import com.ssicosm.slime_great_war.R;
+import android.widget.FrameLayout;
 
 /**
  * Created by King6rf on 2017/7/6.
@@ -25,8 +24,12 @@ public class WebActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.debug_main);
-        webView = (WebView) findViewById(R.id.dmweb);
+//        setContentView(R.layout.debug_main);
+
+        FrameLayout parent=new FrameLayout(this);
+        webView = new WebView(this);
+        setContentView(parent);
+        parent.addView(webView);
         WebSettings webSettings = webView.getSettings();
 //设置 缓存模式
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);

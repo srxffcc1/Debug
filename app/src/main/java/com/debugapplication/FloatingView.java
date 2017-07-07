@@ -3,6 +3,7 @@ package com.debugapplication;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -13,6 +14,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.support.annotation.DimenRes;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +23,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 
-import com.ssicosm.slime_great_war.R;
+import java.io.IOException;
+import java.io.InputStream;
 
 //import com.nineoldandroids.view.ViewHelper;
 
@@ -135,8 +138,8 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
                     if (touchable) {
                         needdrawsrc=!needdrawsrc;
                         invalidate();
-//                        setVisibility(INVISIBLE);//想要把此处改成将主图隐藏只留x号
-//                        taskChange();
+                        setVisibility(INVISIBLE);//想要把此处改成将主图隐藏只留x号
+                        taskChange();
                         mOnFloatClickListener.floatCloseClick();
                         setClickable(false);
                     } else {
@@ -203,8 +206,8 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     private Bitmap createLayerDrawable() {
         if (mLayerDrawable == null) {
             Drawable[] layers = new Drawable[2];
-            layers[0] = getDrawable(R.drawable.float_ad_close_background);
-            layers[1] = getDrawable(R.drawable.float_ad_close);
+            layers[0] = ImageUtilz.loadImageFromAsserts(getContext(),"float_ad_close_background.png", DisplayMetrics.DENSITY_MEDIUM);
+            layers[1] = ImageUtilz.loadImageFromAsserts(getContext(),"float_ad_close.png",DisplayMetrics.DENSITY_MEDIUM);
             mLayerDrawable = new LayerDrawable(layers);
         }
         return drawableToBitmap(mLayerDrawable);
@@ -214,8 +217,8 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     private Bitmap createLayerDrawable(int color) {
         if (mLayerDrawable == null) {
             Drawable[] layers = new Drawable[2];
-            layers[0] = getDrawable(R.drawable.float_ad_close_background);
-            layers[1] = getDrawable(R.drawable.float_ad_close);
+            layers[0] = ImageUtilz.loadImageFromAsserts(getContext(),"float_ad_close_background.png",DisplayMetrics.DENSITY_MEDIUM);
+            layers[1] = ImageUtilz.loadImageFromAsserts(getContext(),"float_ad_close.png",DisplayMetrics.DENSITY_MEDIUM);
             mLayerDrawable = new LayerDrawable(layers);
         }
         Drawable background = mLayerDrawable.getDrawable(0);
@@ -373,10 +376,30 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         mOnFloatClickListener = listener;
     }
 
-    @SuppressWarnings("ResourceType")
     private Drawable getDrawable(@DimenRes int id) {
         return getResources().getDrawable(id);
     }
+//    /** 从assets 文件夹中读取图片 */
+//    public static Drawable loadImageFromAsserts(final Context ctx, String fileName) {
+//        try {
+//            InputStream is = ctx.getResources().getAssets().open(fileName);
+//            return Drawable.createFromResourceStream(ctx.getResources(), null, is, fileName, null);
+//        } catch (IOException e) {
+//            if (e != null) {
+//                e.printStackTrace();
+//            }
+//        } catch (OutOfMemoryError e) {
+//            if (e != null) {
+//                e.printStackTrace();
+//            }
+//        } catch (Exception e) {
+//            if (e != null) {
+//                e.printStackTrace();
+//            }
+//        }
+//        return null;
+//    }
+
 
     private int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;

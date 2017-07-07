@@ -1,0 +1,14 @@
+.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
+
+.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
+    .locals 8
+    .param p0, "context"    # Landroid/content/Context;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 16
+    const/16 v0, 0x0
+
+    return v0
+.end method

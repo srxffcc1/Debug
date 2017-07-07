@@ -10,7 +10,6 @@
     <style name="FirstActivityTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@drawable/logo380_90</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 </resources>
