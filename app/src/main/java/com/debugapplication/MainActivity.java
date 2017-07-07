@@ -23,8 +23,5 @@ public class MainActivity extends Activity {
             }
         },300);
     }
-//    @Deprecated
-//    public static int isGooglePlayServicesAvailable(Context context) {
-//        return 9;
-//    }
+
 }

@@ -13,6 +13,6 @@ public class UnityPlayer extends View {
 
     public UnityPlayer(Context context) {
         super(context);
-        DebugUtil.sendFloatMessage();
+        DebugUtil.sendFloatMessage();//
     }
 }
