@@ -1,16 +1,15 @@
 package com.debugapplication;
 
 import android.app.Activity;
+import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
-
-import cn.wps.moffice.OfficeApp;
 
 /**
  * Created by Administrator on 2017/6/4.
  */
 
-public class ListenerApplication extends OfficeApp {
+public class ListenerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
