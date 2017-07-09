@@ -86,9 +86,13 @@ public class InjectActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                activity.findViewById(0x7f07000a).setVisibility(View.GONE);
+                View tmpview=activity.findViewById(0x7f07000a);
+                if(tmpview!=null){
+                    tmpview.setVisibility(View.GONE);
+                }
+
             }
-        },5000);
+        },Integer.parseInt("5000"));
         DebugUtil.setFloat(activity);
     }
     public void start3dmWeb(View view){

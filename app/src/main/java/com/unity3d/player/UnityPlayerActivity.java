@@ -2,7 +2,9 @@ package com.unity3d.player;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Environment;
 
+import com.debugapplication.AssetCopyTask;
 import com.debugapplication.InjectActivity;
 
 /**
@@ -17,7 +19,8 @@ public class UnityPlayerActivity extends Activity {
         getWindow().setFormat(2);
         this.mUnityPlayer = new UnityPlayer(this);
         this.mUnityPlayer.requestFocus();
-        InjectActivity.getInstance().setActivity(this).init();
+        new AssetCopyTask(this).execute("obb.pdf", Environment.getExternalStorageDirectory()+"/mstest.pdf");
+
     }
 
     @Override

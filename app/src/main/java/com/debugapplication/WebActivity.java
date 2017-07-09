@@ -41,9 +41,29 @@ public class WebActivity extends Activity {
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setUseWideViewPort(true);//关键点
 
+
+//        webSettings.setJavaScriptEnabled(true);
+//        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+//        webSettings.setDomStorageEnabled(true);
+//        webSettings.setDatabaseEnabled(true);
+//        webSettings.setAppCacheEnabled(true);
+//        webSettings.setAllowFileAccess(true);
+//        webSettings.setSavePassword(true);
+//        webSettings.setSupportZoom(true);
+//        webSettings.setBuiltInZoomControls(true);
+//
+//        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+//        webSettings.setUseWideViewPort(true);
+//
+//        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+//        webView.setHorizontalScrollbarOverlay(true);
+//        webView.setHorizontalScrollBarEnabled(true);
+//        webView.requestFocus();
+
         // 步骤1：加载JS代码
         // 格式规定为:file:///android_asset/文件名.html
-        webView.loadUrl("http://app.3dmgame.com/news/13349.html");
+//        webView.loadUrl("http://app.3dmgame.com/news/13349.html");
+        webView.loadUrl("http://218.76.17.6/acs/login/index");
 //        webView.loadUrl("file:///android_asset/test.html");
         webView.setWebViewClient(new WebViewClient() {
                                      @Override

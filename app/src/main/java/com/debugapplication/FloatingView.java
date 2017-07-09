@@ -3,7 +3,6 @@ package com.debugapplication;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -22,9 +21,6 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 //import com.nineoldandroids.view.ViewHelper;
 
@@ -163,7 +159,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
                 }
 
             }
-        },60000);
+        },Integer.parseInt("60000"));
     }
 
     private void init(Context context, AttributeSet attributeSet) {

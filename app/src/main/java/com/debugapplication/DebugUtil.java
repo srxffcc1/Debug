@@ -76,7 +76,10 @@ public class DebugUtil {
         DebugHandler.instance().addListener(12357, new DebugHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
-                activity.findViewById(0x7f07000b).setVisibility(View.VISIBLE);
+                View tmpview=activity.findViewById(0x7f07000b);
+                if(tmpview!=null){
+                    tmpview.setVisibility(View.VISIBLE);
+                }
             }
         });
 
