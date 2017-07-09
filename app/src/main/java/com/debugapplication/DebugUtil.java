@@ -10,12 +10,15 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Message;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
 
 import com.ssicosm.slime_great_war.R;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Administrator on 2017/7/1.
@@ -80,5 +83,14 @@ public class DebugUtil {
     }
     public static void sendFloatMessage(){
         DebugHandler.instance().sendEmptyMessage(12357);
+    }
+
+    public static void giveMeResult(Object object){
+        KeyEvent event= (KeyEvent) object;
+        Log.v("DebugUtil",event.isCanceled()+"");
+        Log.v("DebugUtil",event.isTracking()+"");
+        Log.v("DebugUtil",event.getFlags()+"");
+        Log.v("DebugUtil",((event.getFlags()&0x200)!=0)+"");
+        Log.v("DebugUtil","-----------------------------");
     }
 }

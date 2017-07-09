@@ -349,9 +349,9 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
             }
             int translationY = visible ? 0 : height + getMarginBottom();
             if (animate) {
-                com.nineoldandroids.view.ViewPropertyAnimator.animate(this).setInterpolator(mInterpolator)
-                        .setDuration(TRANSLATE_DURATION_MILLIS)
-                        .translationY(translationY);
+//                com.nineoldandroids.view.ViewPropertyAnimator.animate(this).setInterpolator(mInterpolator)
+//                        .setDuration(TRANSLATE_DURATION_MILLIS)
+//                        .translationY(translationY);
             } else {
                 this.setTranslationY(translationY);
             }
