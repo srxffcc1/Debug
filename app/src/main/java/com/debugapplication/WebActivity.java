@@ -59,7 +59,7 @@ public class WebActivity extends Activity {
 //        webView.setHorizontalScrollbarOverlay(true);
 //        webView.setHorizontalScrollBarEnabled(true);
 //        webView.requestFocus();
-
+//        webView.loadUrl("http://192.168.0.137:8080/map/AYKJ.GISDevelopTestPage.html");
         // 步骤1：加载JS代码
         // 格式规定为:file:///android_asset/文件名.html
         webView.loadUrl("http://app.3dmgame.com/news/13349.html");

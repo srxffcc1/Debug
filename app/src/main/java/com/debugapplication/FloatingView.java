@@ -124,8 +124,9 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
                 if(isClickable()&&needdrawsrc){
-                    needdrawsrc=!needdrawsrc;
+//                    needdrawsrc=!needdrawsrc;
                     performClick();
+                    setVisibility(INVISIBLE);//想要把此处改成将主图隐藏只留x号
                     taskChange();
                 }
                 break;
