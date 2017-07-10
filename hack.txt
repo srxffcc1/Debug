@@ -35,5 +35,7 @@ You have not specified a View to use as content view for popups. Falling back to
 .super Ljava/lang/Object;
 .source "UnityAdsAdvertisingId.java"
 
+webview显示无法缩放的问题 可能是minlevel不是大于14所致
+
 
 

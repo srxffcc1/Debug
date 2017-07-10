@@ -1,7 +1,6 @@
 package com.debugapplication;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -26,7 +25,7 @@ public class AssetCopyTask extends AsyncTask<String,Long,Long> {
         FileOutputStream fos = null;
         try {
              is=context.getAssets().open(
-                    instring, AssetManager.ACCESS_BUFFER);
+                    instring);
 //            is=new FileInputStream(instring);
              fos= new FileOutputStream(outstring);
             long total=is.available();

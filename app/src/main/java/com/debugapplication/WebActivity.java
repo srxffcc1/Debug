@@ -2,16 +2,14 @@ package com.debugapplication;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
+
+//import android.webkit.WebResourceError;
 
 /**
  * Created by King6rf on 2017/7/6.
@@ -87,13 +85,13 @@ public class WebActivity extends Activity {
                                          return super.shouldOverrideUrlLoading(view, url);
                                      }
 
-                                     @RequiresApi(api = Build.VERSION_CODES.M)
-                                     @Override
-                                     public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                                         super.onReceivedError(view, request, error);
-                                         System.out.println("出错了"+error.getErrorCode());
-                                         startWeiXin();
-                                     }
+//                                     @RequiresApi(api = Build.VERSION_CODES.M)
+//                                     @Override
+//                                     public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+//                                         super.onReceivedError(view, request, error);
+//                                         System.out.println("出错了"+error.getErrorCode());
+//                                         startWeiXin();
+//                                     }
 
                                      @Override
                                      public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
