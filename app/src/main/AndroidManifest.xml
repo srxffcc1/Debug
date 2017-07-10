@@ -19,14 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name="com.debugapplication.TmpActivity" />
-        <activity android:name="com.debugapplication.WebActivity" android:screenOrientation="portrait" >
+        <activity android:name="com.debugapplication.WebActivity" android:screenOrientation="portrait" />
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
                 <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
             <!--</intent-filter>-->
-        </activity>
         <activity android:name="com.debugapplication.MainActivity" >
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->

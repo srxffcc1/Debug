@@ -1,8 +1,8 @@
-adb shell am start -D -n packageName/ActivityName
+adb shell am start -D -n packageName/ActivityName-------------调试方式
 
-.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
+.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------去谷歌框架
 
-.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
+.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------去谷歌框架
     .locals 8
     .param p0, "context"    # Landroid/content/Context;
     .annotation runtime Ljava/lang/Deprecated;
@@ -15,8 +15,25 @@ adb shell am start -D -n packageName/ActivityName
     return v0
 .end method
 
-        //.class final Lcom/google/android/gms/games/internal/PopupManager$PopupManagerHCMR1;
+        //.class final Lcom/google/android/gms/games/internal/PopupManager$PopupManagerHCMR1;----框架加载好大概吧
         //.super Lcom/google/android/gms/games/internal/PopupManager;
 
 .method public zzw(Landroid/view/View;)V
+You have not specified a View to use as content view for popups. Falling back to the Activity content view----框架加载好大概吧
+
+
+.class public Lcom/unity3d/ads/properties/SdkProperties;----去广告
+.super Ljava/lang/Object;
+.source "SdkProperties.java"
+
+//googleads.g.----去谷歌广告
+
+.class public final Lcom/google/android/gms/wallet/WalletConstants;----去广告
+.super Ljava/lang/Object;
+
+.class public Lcom/unity3d/ads/picture/UnityAdsAdvertisingId;
+.super Ljava/lang/Object;
+.source "UnityAdsAdvertisingId.java"
+
+
 

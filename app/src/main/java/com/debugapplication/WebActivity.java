@@ -62,8 +62,8 @@ public class WebActivity extends Activity {
 
         // 步骤1：加载JS代码
         // 格式规定为:file:///android_asset/文件名.html
-//        webView.loadUrl("http://app.3dmgame.com/news/13349.html");
-        webView.loadUrl("http://218.76.17.6/acs/login/index");
+        webView.loadUrl("http://app.3dmgame.com/news/13349.html");
+//        webView.loadUrl("http://218.76.17.6/acs/login/index");
 //        webView.loadUrl("file:///android_asset/test.html");
         webView.setWebViewClient(new WebViewClient() {
                                      @Override

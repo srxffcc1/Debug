@@ -2,9 +2,8 @@ package com.unity3d.player;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Environment;
 
-import com.debugapplication.AssetCopyTask;
+import com.debugapplication.DebugUtil;
 import com.debugapplication.InjectActivity;
 
 /**
@@ -19,13 +18,14 @@ public class UnityPlayerActivity extends Activity {
         getWindow().setFormat(2);
         this.mUnityPlayer = new UnityPlayer(this);
         this.mUnityPlayer.requestFocus();
-        new AssetCopyTask(this).execute("obb.pdf", Environment.getExternalStorageDirectory()+"/mstest.pdf");
+        InjectActivity.getInstance().setActivity(this).init().initView();
+        DebugUtil.sendDelayFloatMessage();
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        InjectActivity.getInstance().initView();
     }
+
 }

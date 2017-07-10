@@ -124,6 +124,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
                 if(isClickable()&&needdrawsrc){
+                    needdrawsrc=!needdrawsrc;
                     performClick();
                     taskChange();
                 }

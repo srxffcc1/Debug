@@ -1,6 +1,7 @@
 package com.debugapplication;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -45,6 +46,7 @@ public class InjectActivity {
     private void onCreateStartToReplaceSetContentView() {
         FrameLayout parent=new FrameLayout(activity);
         DragLayout dragLayout=new DragLayout(activity);
+        dragLayout.setBackgroundColor(Color.parseColor("#00000000"));
         dragLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         LinearLayout backlinear=new LinearLayout(activity);
         backlinear.setId(0x7f07000a);
@@ -70,12 +72,12 @@ public class InjectActivity {
         floatingView.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity,"splash23dm.png"));
         floatingView.setLayoutParams(new LinearLayout.LayoutParams(430,175));
         floatingView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        floatingView.setVisibility(View.INVISIBLE);
+        floatingView.setVisibility(View.VISIBLE);
         backlinear.addView(textView1);
         backlinear.addView(d3mlogo);
         backlinear.addView(textView2);
-        dragLayout.addView(backlinear);
         dragLayout.addView(floatingView);
+        parent.addView(backlinear);
         parent.addView(dragLayout);
         ViewGroup viewGroup= (ViewGroup) activity.findViewById(android.R.id.content);
         viewGroup.addView(parent);
