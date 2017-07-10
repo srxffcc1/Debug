@@ -2,8 +2,9 @@ package com.debugapplication;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
+import android.os.Message;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,14 +24,18 @@ public class AssetCopyTask extends AsyncTask<String,Long,Long> {
         String outstring=params[1];
         InputStream is=null;
         FileOutputStream fos = null;
+        if(!new File(outstring).getParentFile().exists()){
+            new File(outstring).getParentFile().mkdirs();
+        }
         try {
              is=context.getAssets().open(
                     instring);
 //            is=new FileInputStream(instring);
-             fos= new FileOutputStream(outstring);
+            fos= new FileOutputStream(outstring);
             long total=is.available();
             int copyedSize=0;
-            byte[] buffer = new byte[3072];
+//            int needsize=total>512*1024*1024?4096:1024;
+            byte[] buffer = new byte[8192];
             long byteCount = 0;
             int len = 0;
             long sum = 0;
@@ -64,19 +69,33 @@ public class AssetCopyTask extends AsyncTask<String,Long,Long> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        Log.v("AssetCopyTask","任务开始");
+//        Log.v("AssetCopyTask","任务开始");
 
     }
 
     @Override
     protected void onPostExecute(Long integer) {
         super.onPostExecute(integer);
-        Log.v("AssetCopyTask","任务完成");
+//        Log.v("AssetCopyTask","任务完成");
+        DebugHandler.instance().sendEmptyMessage(12359);
     }
 
     @Override
     protected void onProgressUpdate(Long... values) {
         super.onProgressUpdate(values);
-        Log.v("AssetCopyTask","进度"+values[0]+",全部:"+values[1]);
+//        Log.v("AssetCopyTask","进度"+values[0]+",全部:"+values[1]);
+
+        long jindu=values[0];
+        long tot=values[1];
+        int getjindu=(int) (jindu*1000/tot);
+//        Log.v("SRX","阐出进度"+getjindu);
+        Message message=new Message();
+        message.what=12358;
+        message.obj=getjindu;
+        DebugHandler.instance().sendMessage(message);
+//        Message message2=new Message();
+//        message2.what=12360;
+//        message2.obj=getjindu;
+//        DebugHandler.instance().sendMessage(message2);
     }
 }

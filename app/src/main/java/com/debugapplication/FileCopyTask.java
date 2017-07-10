@@ -36,7 +36,7 @@ public class FileCopyTask extends AsyncTask<String,Integer,Integer> {
             FileChannel fout = out.getChannel();
             int totleSize = in.available();
             //NIO 专属 运输小车
-            ByteBuffer buffer = ByteBuffer.allocate(4096);
+            ByteBuffer buffer = ByteBuffer.allocate(1024);
             int eachSize=0;
             int copyedSize=0;
             while ((eachSize = fcin.read(buffer)) != -1) {

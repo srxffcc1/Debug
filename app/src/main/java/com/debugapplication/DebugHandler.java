@@ -2,7 +2,6 @@ package com.debugapplication;
 
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,10 +15,10 @@ public class DebugHandler {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            Log.v("DebugHandler","分配:"+msg.what+"");
+//            Log.v("DebugHandler","分配:"+msg.what+"");
             HandlerListener listener=handlerListenerMap.get(msg.what);
             if(listener!=null){
-                Log.v("DebugHandler","开始:"+msg.what+"");
+//                Log.v("DebugHandler","开始:"+msg.what+"");
                 listener.hand(msg);
             }
         }
@@ -44,13 +43,16 @@ public class DebugHandler {
         return instance;
     }
     public  DebugHandler addListener(int key,HandlerListener value){
-        Log.v("DebugHandler","注册:"+key);
+//        Log.v("DebugHandler","注册:"+key);
         handlerListenerMap.put(key,value);
         return instance;
     }
-    public  DebugHandler removeListener(int key){
-        Log.v("DebugHandler","移除:"+key);
-        handlerListenerMap.remove(key);
+    public  DebugHandler removeListener(int... key){
+//        Log.v("DebugHandler","移除:"+key);
+        for (int i : key) {
+            handlerListenerMap.remove(i);
+        }
+
         return instance;
     }
 }

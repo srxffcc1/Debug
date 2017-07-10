@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.debugapplication.DebugUtil;
+
 import com.debugapplication.InjectActivity;
 
 /**
@@ -18,14 +19,19 @@ public class UnityPlayerActivity extends Activity {
         getWindow().setFormat(2);
         this.mUnityPlayer = new UnityPlayer(this);
         this.mUnityPlayer.requestFocus();
+
         InjectActivity.getInstance().setActivity(this).init().initView();
         DebugUtil.sendDelayFloatMessage();
+
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
+        InjectActivity.getInstance().setActivity(this).init().initView();
+
     }
 
 }

@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * Created by Administrator on 2017/7/9.
  */
-
+@SuppressWarnings("ResourceType")
 public class InjectActivity {
     private static final InjectActivity instance=new InjectActivity();
     private Activity activity;

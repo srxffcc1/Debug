@@ -2,15 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ssicosm.slime_great_war">
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+
+    <!--往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--在sdcard中创建/删除文件的权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
     <application
-        android:debuggable="true"
+        android:largeHeap="true"
         android:allowBackup="true"
         android:name="com.debugapplication.ListenerApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+
         >
-        <activity android:name="com.unity3d.player.UnityPlayerActivity" android:screenOrientation="portrait"  >
+        <activity android:name="com.unity3d.player.UnityPlayerActivity" android:screenOrientation="landscape"  >
+
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -28,13 +37,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.debugapplication.MainActivity" >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <activity android:name="com.debugapplication.ProgressActivity" android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-                <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
+            </intent-filter>
         </activity>
     </application>
     <uses-permission

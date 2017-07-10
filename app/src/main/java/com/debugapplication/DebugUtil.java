@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/7/1.
  */
-
+@SuppressWarnings("ResourceType")
 public class DebugUtil {
     public static void start3dmWeb1(Context activity){
         if(isWeixinAvilible(activity)){
