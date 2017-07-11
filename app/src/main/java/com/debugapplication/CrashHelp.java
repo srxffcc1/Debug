@@ -67,7 +67,7 @@ public class CrashHelp {
             }
 
         });
-        CrashReport.initCrashReport(mcontext.getApplicationContext(), buglyid, isApkDebugable(), strategy);
+        CrashReport.initCrashReport(mcontext.getApplicationContext(), buglyid, true, strategy);
         return crashHelp;
     }
 

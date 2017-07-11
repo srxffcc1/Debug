@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.debugapplication.DebugUtil;
-
 import com.debugapplication.InjectActivity;
 
 /**
