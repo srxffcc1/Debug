@@ -2,7 +2,6 @@ package com.debugapplication;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.util.Log;
 
@@ -17,7 +16,7 @@ import java.util.Map;
 
 public class CrashHelp {
     private static Context mcontext;
-    private static Class<? extends Activity> mbugclass;
+//    private static Class<? extends Activity> mbugclass;
     private static final CrashHelp crashHelp = new CrashHelp();
 
     public static boolean isApkDebugable() {
@@ -41,9 +40,9 @@ public class CrashHelp {
                 LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
                 map.put("Key", "Value");
                 if (isApkDebugable()) {
-                    Intent crasha = new Intent(mcontext, mbugclass).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    crasha.putExtra("crash", crashType + "\n" + errorType + "\n" + errorMessage + "\n" + errorStack);
-                    mcontext.startActivity(crasha);
+//                    Intent crasha = new Intent(mcontext, mbugclass).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    crasha.putExtra("crash", crashType + "\n" + errorType + "\n" + errorMessage + "\n" + errorStack);
+//                    mcontext.startActivity(crasha);
                 }
 
 
@@ -55,9 +54,9 @@ public class CrashHelp {
                                                            String errorMessage, String errorStack) {
                 Log.v("SRX","crash2");
                 if (isApkDebugable() && crashType != 0) {
-                    Intent crasha = new Intent(mcontext, mbugclass).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    crasha.putExtra("crash", crashType + "\n" + errorType + "\n" + errorMessage + "\n" + errorStack);
-                    mcontext.startActivity(crasha);
+//                    Intent crasha = new Intent(mcontext, mbugclass).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    crasha.putExtra("crash", crashType + "\n" + errorType + "\n" + errorMessage + "\n" + errorStack);
+//                    mcontext.startActivity(crasha);
                 }
                 try {
                     return "Extra data.".getBytes("UTF-8");
