@@ -13,6 +13,7 @@ public class ListenerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        CrashHelp.instance(this,null,"6bd6fe43d2");
         this.registerActivityLifecycleCallbacks(new BusinessActivityCallbacks());
     }
 
