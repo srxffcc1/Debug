@@ -43,6 +43,9 @@
                 <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
             <!--</intent-filter>-->
         </activity>
+        <activity android:name="com.debugapplication.SplashActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+        </activity>
     </application>
     <uses-permission
         android:name="com.tencent.mm.permission.GET_QRCODE_INFO"/>

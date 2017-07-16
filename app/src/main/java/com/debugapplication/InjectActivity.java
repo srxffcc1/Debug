@@ -38,12 +38,20 @@ public class InjectActivity {
     public void initView(){
         if(inittimes==0){
             Log.v("InjectActivity","进入");
-            onCreateStartToReplaceSetContentView();
+            onCreateStartToReplaceSetContentView(true);
             inittimes++;
         }
 
     }
-    private void onCreateStartToReplaceSetContentView() {
+    public void initViewNoBack(){
+        if(inittimes==0){
+            Log.v("InjectActivity","进入");
+            onCreateStartToReplaceSetContentView(false);
+            inittimes++;
+        }
+
+    }
+    private void onCreateStartToReplaceSetContentView(boolean needback) {
         FrameLayout parent=new FrameLayout(activity);
         DragLayout dragLayout=new DragLayout(activity);
         dragLayout.setBackgroundColor(Color.parseColor("#00000000"));
@@ -76,6 +84,12 @@ public class InjectActivity {
         backlinear.addView(textView1);
         backlinear.addView(d3mlogo);
         backlinear.addView(textView2);
+        if(needback){
+            backlinear.setVisibility(View.VISIBLE);
+        }else{
+
+            backlinear.setVisibility(View.GONE);
+        }
         dragLayout.addView(floatingView);
         parent.addView(backlinear);
         parent.addView(dragLayout);
