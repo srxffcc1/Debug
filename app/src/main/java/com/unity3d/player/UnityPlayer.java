@@ -1,7 +1,10 @@
 package com.unity3d.player;
 
 import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
+
+import com.debugapplication.DebugUtil;
 
 /**
  * Created by Administrator on 2017/6/4.
@@ -14,29 +17,10 @@ public class UnityPlayer extends View {
 
 
     }
-    public void ss1(){
-        int s=0;
-        switch (s){
-            case 0:
-                break;
-            case 1:
-                System.out.println("src");
-                break;
-            default:
-                System.out.println("list");
 
-        }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        DebugUtil.injectEvent(event);
+        return super.onTouchEvent(event);
     }
-    public void ss2(){
-        int s=0;
-        switch (s){
-            case 0:
-            case 1:
-                break;
-            default:
-                System.out.println("list");
-
-        }
-    }
-    
 }

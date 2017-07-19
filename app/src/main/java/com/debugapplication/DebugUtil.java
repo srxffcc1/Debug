@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.InputEvent;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -101,5 +102,8 @@ public class DebugUtil {
         Log.v("DebugUtil",event.getFlags()+"");
         Log.v("DebugUtil",((event.getFlags()&0x200)!=0)+"");
         Log.v("DebugUtil","-----------------------------");
+    }
+    public static void injectEvent(InputEvent inputEvent){
+        Log.v("injectEvent",inputEvent.toString()+"");
     }
 }

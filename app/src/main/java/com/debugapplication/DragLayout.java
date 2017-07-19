@@ -65,6 +65,8 @@ public class DragLayout extends RelativeLayout {
         });
     }
 
+
+
     private void moveToSide(View view) {
         float top = view.getTop();
         float bottom = getMeasuredHeight() - view.getBottom();
@@ -86,6 +88,7 @@ public class DragLayout extends RelativeLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        System.out.println("点击事件:DragLayout");
         mDragger.processTouchEvent(event);
         return false;
     }

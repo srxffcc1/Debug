@@ -1,8 +1,8 @@
-adb shell am start -D -n packageName/ActivityName-------------µ÷ÊÔ·½Ê½
+ï»¿adb shell am start -D -n packageName/ActivityName-------------è°ƒè¯•æ–¹å¼
 
-.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------È¥¹È¸è¿ò¼Ü
+.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------å»è°·æ­Œæ¡†æ¶
 
-.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------È¥¹È¸è¿ò¼Ü
+.method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I#--------å»è°·æ­Œæ¡†æ¶
     .locals 8
     .param p0, "context"    # Landroid/content/Context;
     .annotation runtime Ljava/lang/Deprecated;
@@ -15,27 +15,29 @@ adb shell am start -D -n packageName/ActivityName-------------µ÷ÊÔ·½Ê½
     return v0
 .end method
 
-        //.class final Lcom/google/android/gms/games/internal/PopupManager$PopupManagerHCMR1;----¿ò¼Ü¼ÓÔØºÃ´ó¸Å°É
+        //.class final Lcom/google/android/gms/games/internal/PopupManager$PopupManagerHCMR1;----æ¡†æ¶åŠ è½½å¥½å¤§æ¦‚å§
         //.super Lcom/google/android/gms/games/internal/PopupManager;
 
 .method public zzw(Landroid/view/View;)V
-You have not specified a View to use as content view for popups. Falling back to the Activity content view----¿ò¼Ü¼ÓÔØºÃ´ó¸Å°É
+You have not specified a View to use as content view for popups. Falling back to the Activity content view----æ¡†æ¶åŠ è½½å¥½å¤§æ¦‚å§
 
 
-.class public Lcom/unity3d/ads/properties/SdkProperties;----È¥¹ã¸æ
+.class public Lcom/unity3d/ads/properties/SdkProperties;----å»å¹¿å‘Š
 .super Ljava/lang/Object;
 .source "SdkProperties.java"
 
-//googleads.g.----È¥¹È¸è¹ã¸æ
+//googleads.g.----å»è°·æ­Œå¹¿å‘Š
 
-.class public final Lcom/google/android/gms/wallet/WalletConstants;----È¥¹ã¸æ
+.class public final Lcom/google/android/gms/wallet/WalletConstants;----å»å¹¿å‘Š
 .super Ljava/lang/Object;
 
 .class public Lcom/unity3d/ads/picture/UnityAdsAdvertisingId;
 .super Ljava/lang/Object;
 .source "UnityAdsAdvertisingId.java"
 
-webviewÏÔÊ¾ÎŞ·¨Ëõ·ÅµÄÎÊÌâ ¿ÉÄÜÊÇminlevel²»ÊÇ´óÓÚ14ËùÖÂ
+webviewæ˜¾ç¤ºæ— æ³•ç¼©æ”¾çš„é—®é¢˜ å¯èƒ½æ˜¯minlevelä¸æ˜¯å¤§äº14æ‰€è‡´
+
+NativeActivityä¼šå¯¼è‡´ä¸Šå±‚æ§ä»¶çš„ç‚¹å‡»äº‹ä»¶å‡ºç°å¼‚å¸¸//å¯ä»¥æ”¹ä¸ºç»§æ‰¿Activity
 
 
 

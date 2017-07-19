@@ -74,7 +74,6 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -121,6 +120,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        System.out.println("点击事件:FloatingView");
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
                 if(isClickable()&&needdrawsrc){

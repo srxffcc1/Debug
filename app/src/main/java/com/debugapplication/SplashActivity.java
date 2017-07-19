@@ -2,6 +2,7 @@ package com.debugapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -22,6 +23,7 @@ public class SplashActivity extends Activity{
         super.onCreate(savedInstanceState);
         activity=this;
         FrameLayout parent=new FrameLayout(activity);
+        parent.setBackgroundColor(Color.parseColor("#00000000"));
         LinearLayout backlinear=new LinearLayout(activity);
         backlinear.setId(0x7f07000a);
         backlinear.setOrientation(LinearLayout.VERTICAL);
@@ -46,7 +48,7 @@ public class SplashActivity extends Activity{
             @Override
             public void run() {
                 try {
-                    startActivity(new Intent(SplashActivity.this,Class.forName("air.net.gritfish.mallowdrops.AppEntry")));
+                    startActivity(new Intent(SplashActivity.this,Class.forName("com.unity3d.player.UnityPlayerActivity")));
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
