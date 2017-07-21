@@ -60,6 +60,7 @@ public class WebActivity extends Activity {
 //        webView.loadUrl("http://192.168.0.137:8080/map/AYKJ.GISDevelopTestPage.html");
         // 步骤1：加载JS代码
         // 格式规定为:file:///android_asset/文件名.html
+//                webView.loadUrl("http://devwap.huinongtx.com/sp/dist/#/help");
         webView.loadUrl("http://app.3dmgame.com/news/13349.html");
 //        webView.loadUrl("http://218.76.17.6/acs/login/index");
 //        webView.loadUrl("file:///android_asset/test.html");
