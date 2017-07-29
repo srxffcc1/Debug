@@ -80,7 +80,7 @@ public class InjectActivity {
         floatingView.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity,"splash23dm.png"));
         floatingView.setLayoutParams(new LinearLayout.LayoutParams(430,175));
         floatingView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        floatingView.setVisibility(View.VISIBLE);
+        floatingView.setVisibility(View.INVISIBLE);
         backlinear.addView(textView1);
         backlinear.addView(d3mlogo);
         backlinear.addView(textView2);

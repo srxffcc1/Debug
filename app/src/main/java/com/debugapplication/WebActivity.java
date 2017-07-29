@@ -38,6 +38,7 @@ public class WebActivity extends Activity {
         // 设置允许JS弹窗
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setUseWideViewPort(true);//关键点
+        webSettings.setLoadWithOverviewMode(true);
 
 
 //        webSettings.setJavaScriptEnabled(true);

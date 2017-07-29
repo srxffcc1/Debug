@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
  */
 public class DragLayout extends RelativeLayout {
     private ViewDragHelper mDragger;
+    private  int clicktime=0;
 
     public DragLayout(Context context) {
         this(context, null);
@@ -88,7 +89,10 @@ public class DragLayout extends RelativeLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        System.out.println("点击事件:DragLayout");
+        if(clicktime==0){
+            DebugUtil.sendDelayFloatMessage();
+            clicktime=-1;
+        }
         mDragger.processTouchEvent(event);
         return false;
     }
