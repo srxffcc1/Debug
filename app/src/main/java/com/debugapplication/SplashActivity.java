@@ -27,7 +27,7 @@ public class SplashActivity extends Activity{
         LinearLayout backlinear=new LinearLayout(activity);
         backlinear.setId(0x7f07000a);
         backlinear.setOrientation(LinearLayout.VERTICAL);
-        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity,"d3mback.png"));
+        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, "d3mbackh.jpg"));
         backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         TextView textView1=new TextView(activity);
         textView1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0,1));

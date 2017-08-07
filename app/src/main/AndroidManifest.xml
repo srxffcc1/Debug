@@ -19,20 +19,20 @@
         >
         <activity android:name="com.unity3d.player.UnityPlayerActivity" android:screenOrientation="landscape"  >
 
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-                <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
+            </intent-filter>
         </activity>
         <activity android:name="com.debugapplication.WebActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-            <category android:name="android.intent.category.LAUNCHER" />
-            <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity android:name="com.debugapplication.ProgressActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
