@@ -89,10 +89,10 @@ public class DragLayout extends RelativeLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(clicktime==0){
-            DebugUtil.sendDelayFloatMessage();
-            clicktime=-1;
-        }
+//        if(clicktime==0){
+//            DebugUtil.sendDelayFloatMessage();
+//            clicktime=-1;
+//        }
         mDragger.processTouchEvent(event);
         return false;
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ssicosm.slime_great_war">
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -16,6 +17,7 @@
         android:name="com.debugapplication.ListenerApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        tools:replace="android:icon"
         >
         <activity android:name="com.unity3d.player.UnityPlayerActivity" android:screenOrientation="landscape"  >
 
