@@ -1,5 +1,6 @@
 ﻿adb shell am start -D -n packageName/ActivityName-------------调试方式
 GooglePlayServicesUtil
+Lcom/google/android/gms/common/zze;
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------去谷歌框架
 
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I#--------去谷歌框架
