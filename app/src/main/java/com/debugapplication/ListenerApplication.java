@@ -2,6 +2,8 @@ package com.debugapplication;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -10,11 +12,43 @@ import android.util.Log;
  */
 
 public class ListenerApplication extends Application {
+    public int loadtime=0;
+    private String loadclass;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        System.out.println("打开app");
+        loadtime=0;
+        try {
+            ApplicationInfo appInfo = this.getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+            loadclass = appInfo.metaData.getString("loadclass");
+            if(loadclass.startsWith(".")){
+                loadclass=getPackageName()+loadclass;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
         CrashHelp.instance(this,null,"6bd6fe43d2");
         this.registerActivityLifecycleCallbacks(new BusinessActivityCallbacks());
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        loadtime=0;
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        loadtime=0;
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        loadtime=0;
     }
 
     class BusinessActivityCallbacks implements ActivityLifecycleCallbacks{
@@ -22,42 +56,47 @@ public class ListenerApplication extends Application {
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
 
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityCreated");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityCreated");
 
         }
 
         @Override
         public void onActivityStarted(Activity activity) {
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityStarted");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityStarted");
+            if(loadtime==0&&activity.getClass().getName().equals(loadclass)){
+                loadtime=1;
+                InjectActivity.getInstance().setActivity(activity).init().initViewLeftTop();
+                DebugUtil.sendDelayFloatMessage();
+            }
 
         }
 
         @Override
         public void onActivityResumed(Activity activity) {
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityResumed");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityResumed");
         }
 
         @Override
         public void onActivityPaused(Activity activity) {
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityPaused");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityPaused");
 
         }
 
         @Override
         public void onActivityStopped(Activity activity) {
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityStopped");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityStopped");
 
         }
 
         @Override
         public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivitySaveInstanceState");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivitySaveInstanceState");
 
         }
 
         @Override
         public void onActivityDestroyed(Activity activity) {
-            Log.v("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityDestroyed");
+            Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityDestroyed");
         }
     }
 }

@@ -11,7 +11,7 @@ Lcom/google/android/gms/common/zze;
 
     .prologue
     .line 16
-    const/16 v0, 0x0
+    const/16 v0, 0x3
 
     return v0
 .end method
