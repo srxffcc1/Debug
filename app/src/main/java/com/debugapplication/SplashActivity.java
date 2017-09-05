@@ -13,7 +13,7 @@ public class SplashActivity extends Activity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        InjectActivity.getInstance().setActivity(this).initView();
+        InjectActivity.getInstance().setActivity(this).initViewLeftTop();
         DebugUtil.sendDelayFloatMessage();
 //        new Handler().postDelayed(new Runnable() {
 //            @Override

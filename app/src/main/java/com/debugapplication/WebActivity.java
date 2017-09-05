@@ -23,7 +23,7 @@ public class WebActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.debug_main);
-
+        String url=getIntent().getStringExtra("url");
         FrameLayout parent=new FrameLayout(this);
         webView = new WebView(this);
         setContentView(parent);
@@ -39,7 +39,10 @@ public class WebActivity extends Activity {
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setUseWideViewPort(true);//关键点
         webSettings.setLoadWithOverviewMode(true);
-
+        if("".equals(url)||url==null){
+//            url="http://app.3dmgame.com/news/13349.html";
+            url="http://poe.17173.com/gj/mnq/3.0.shtml";
+        }
 
 //        webSettings.setJavaScriptEnabled(true);
 //        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -62,7 +65,7 @@ public class WebActivity extends Activity {
         // 步骤1：加载JS代码
         // 格式规定为:file:///android_asset/文件名.html
 //                webView.loadUrl("http://devwap.huinongtx.com/sp/dist/#/help");
-        webView.loadUrl("http://app.3dmgame.com/news/13349.html");
+        webView.loadUrl(url);
 //        webView.loadUrl("http://218.76.17.6/acs/login/index");
 //        webView.loadUrl("file:///android_asset/test.html");
         webView.setWebViewClient(new WebViewClient() {

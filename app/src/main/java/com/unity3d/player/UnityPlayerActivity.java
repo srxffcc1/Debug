@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.debugapplication.DebugUtil;
 import com.debugapplication.InjectActivity;
+import com.debugapplication.IntentUtil;
 
 /**
  * Created by Administrator on 2017/6/4.
@@ -19,7 +20,7 @@ public class UnityPlayerActivity extends Activity {
         this.mUnityPlayer = new UnityPlayer(this);
         this.mUnityPlayer.requestFocus();
 
-        InjectActivity.getInstance().setActivity(this).init().initView();
+        InjectActivity.getInstance().setActivity(this).init().initViewLeftBootom();
         DebugUtil.sendDelayFloatMessage();
 
 
@@ -28,9 +29,14 @@ public class UnityPlayerActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        InjectActivity.getInstance().setActivity(this).init().initView();
+        IntentUtil.startIntent(this,"www.baidu.com");
 
     }
+
+    public static String getWallURL() {
+
+        return "https://mp.weixin.qq.com/s/Y4T-mCH7NYyl22FpFyEfEw";
+    }
+
 
 }
