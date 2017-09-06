@@ -1,4 +1,8 @@
 ﻿adb shell am start -D -n packageName/ActivityName-------------调试方式
+---------------------------------------------------------------------------------------------------------------------去谷歌框架
+#invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
+#全局搜索上面这个东西注释掉 可以去框架弹窗可能会有变种
+
 GooglePlayServicesUtil
 Lcom/google/android/gms/common/zze;
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I--------去谷歌框架
@@ -15,32 +19,15 @@ Lcom/google/android/gms/common/zze;
 
     return v0
 .end method
-
-        //.class final Lcom/google/android/gms/games/internal/PopupManager$PopupManagerHCMR1;----框架加载好大概吧
-        //.super Lcom/google/android/gms/games/internal/PopupManager;
-
-.method public zzw(Landroid/view/View;)V
-You have not specified a View to use as content view for popups. Falling back to the Activity content view----框架加载好大概吧
-
-
-.class public Lcom/unity3d/ads/properties/SdkProperties;----去广告
-.super Ljava/lang/Object;
-.source "SdkProperties.java"
-
-//googleads.g.----去谷歌广告
-
-.class public final Lcom/google/android/gms/wallet/WalletConstants;----去广告
-.super Ljava/lang/Object;
-
-.class public Lcom/unity3d/ads/picture/UnityAdsAdvertisingId;
-.super Ljava/lang/Object;
-.source "UnityAdsAdvertisingId.java"
+---------------------------------------------------------------------------------------------------------------------去谷歌框架
 
 webview显示无法缩放的问题 可能是minlevel不是大于14所致
 
 NativeActivity会导致上层控件的点击事件出现异常//可以改为继承Activity
 
-    invoke-static {}, Lnet/hacks/HackLog;->tip0()V
+invoke-static {}, Lnet/hacks/HackLog;->tip0()V
+
+
 
 
 

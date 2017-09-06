@@ -47,6 +47,5 @@
 
         </activity>
     </application>
-    <uses-permission
-        android:name="com.tencent.mm.permission.GET_QRCODE_INFO"/>
+    <uses-permission android:name="com.tencent.mm.permission.GET_QRCODE_INFO"/>
 </manifest>

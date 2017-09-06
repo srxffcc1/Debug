@@ -19,4 +19,8 @@ public class UnityPlayerActivity extends Activity {
         HackUtil.sendDelayFloatMessage();
         HackLog.tip0();
     }
+    static String getStatusString(int statusCode) {
+       return "SUCCESS";
+    }
+
 }
