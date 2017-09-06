@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,12 +14,12 @@ public class SplashActivity extends Activity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         InjectActivity.getInstance().setActivity(this).initViewLeftTop();
-        DebugUtil.sendDelayFloatMessage();
+        HackUtil.sendDelayFloatMessage();
 //        new Handler().postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
 //                try {
-//                    startActivity(new Intent(SplashActivity.this,Class.forName("com.unity3d.player.UnityPlayerActivity")));
+//                    startActivity(new Intent(SplashActivity.this,Class.forName("net.UnityPlayerActivity")));
 //                } catch (ClassNotFoundException e) {
 //                    e.printStackTrace();
 //                }

@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;

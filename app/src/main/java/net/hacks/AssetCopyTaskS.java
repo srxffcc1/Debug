@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -93,7 +93,7 @@ public class AssetCopyTaskS extends AsyncTask<String, Long, Long> {
     protected void onPostExecute(Long integer) {
         super.onPostExecute(integer);
         Log.v("AssetCopyTask","任务完成");
-        DebugHandler.instance().sendEmptyMessage(12359);
+        HackHandler.instance().sendEmptyMessage(12359);
     }
     long old=0;
     long now=0;
@@ -110,11 +110,11 @@ public class AssetCopyTaskS extends AsyncTask<String, Long, Long> {
             Message message =Message.obtain();
             message.what = 12358;
             message.obj = getjindu;
-            DebugHandler.instance().sendMessage(message);
+            HackHandler.instance().sendMessage(message);
             Message message2=Message.obtain();
             message2.what=12360;
             message2.obj=getjindu;
-            DebugHandler.instance().sendMessage(message2);
+            HackHandler.instance().sendMessage(message2);
             old=now;
 
         }

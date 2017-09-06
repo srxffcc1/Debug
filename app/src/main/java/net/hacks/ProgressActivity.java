@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -73,7 +73,7 @@ public class ProgressActivity extends Activity {
         resigiter();
         if(new File(resultdir+needassetsstart+".obb").exists()){
             try {
-                startActivity(new Intent(ProgressActivity.this,Class.forName("com.unity3d.player.UnityPlayerActivity")));
+                startActivity(new Intent(ProgressActivity.this,Class.forName("net.UnityPlayerActivity")));
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -88,7 +88,7 @@ public class ProgressActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        DebugHandler.instance().removeListener(12358,12359);
+        HackHandler.instance().removeListener(12358,12359);
     }
     String needassetsstart="main.11.com.NightSchool.Oxenfree";
     String tmpassetsdir=Environment.getExternalStorageDirectory()+"/Android/tmp/com.NightSchool.Oxenfree"+"/";
@@ -97,7 +97,7 @@ public class ProgressActivity extends Activity {
         new AssetCopyTaskS(this).execute(needassetsstart,tmpassetsdir );
     }
     public void resigiter(){
-        DebugHandler.instance().addListener(12358, new DebugHandler.HandlerListener() {
+        HackHandler.instance().addListener(12358, new HackHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
 //                long[] array= (long[]) msg.obj;
@@ -114,7 +114,7 @@ public class ProgressActivity extends Activity {
                 bar.setProgress(getjindu);
             }
         });
-        DebugHandler.instance().addListener(12360, new DebugHandler.HandlerListener() {
+        HackHandler.instance().addListener(12360, new HackHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
 //                long[] array= (long[]) msg.obj;
@@ -126,7 +126,7 @@ public class ProgressActivity extends Activity {
 //                int jindu=(int) (array[0]*1000/array[1]);
             }
         });
-        DebugHandler.instance().addListener(12361, new DebugHandler.HandlerListener() {
+        HackHandler.instance().addListener(12361, new HackHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
                 int getjindu= (int) msg.obj;
@@ -140,7 +140,7 @@ public class ProgressActivity extends Activity {
                 bar.setProgress(getjindu);
             }
         });
-        DebugHandler.instance().addListener(12362, new DebugHandler.HandlerListener() {
+        HackHandler.instance().addListener(12362, new HackHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
                 TextView textview= (TextView) findViewById(0x7f07000c);
@@ -157,14 +157,14 @@ public class ProgressActivity extends Activity {
                             FileUtil.delete(new File(tmpassetsdir));
                         }
                     }).start();
-                    startActivity(new Intent(ProgressActivity.this,Class.forName("com.unity3d.player.UnityPlayerActivity")));
+                    startActivity(new Intent(ProgressActivity.this,Class.forName("net.UnityPlayerActivity")));
                     finish();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
-        DebugHandler.instance().addListener(12359, new DebugHandler.HandlerListener() {
+        HackHandler.instance().addListener(12359, new HackHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
                 TextView textview= (TextView) findViewById(0x7f07000c);
@@ -174,7 +174,7 @@ public class ProgressActivity extends Activity {
                 bar.setProgress(1000);
                 try {
                     startExtrat();
-//                    startActivity(new Intent(ProgressActivity.this,Class.forName("com.unity3d.player.UnityPlayerActivity")));
+//                    startActivity(new Intent(ProgressActivity.this,Class.forName("net.UnityPlayerActivity")));
 //                    finish();
                 } catch (Exception e) {
                     e.printStackTrace();

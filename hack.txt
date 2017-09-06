@@ -11,7 +11,7 @@ Lcom/google/android/gms/common/zze;
 
     .prologue
     .line 16
-    const/16 v0, 0x3
+    const/16 v0, 0x0
 
     return v0
 .end method
@@ -39,6 +39,8 @@ You have not specified a View to use as content view for popups. Falling back to
 webview显示无法缩放的问题 可能是minlevel不是大于14所致
 
 NativeActivity会导致上层控件的点击事件出现异常//可以改为继承Activity
+
+    invoke-static {}, Lnet/hacks/HackLog;->tip0()V
 
 
 

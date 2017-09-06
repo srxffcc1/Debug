@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import java.io.File;
 

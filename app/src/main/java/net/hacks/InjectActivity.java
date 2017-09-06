@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -184,9 +184,9 @@ public class InjectActivity {
 
             }
         },Integer.parseInt("5000"));
-        DebugUtil.setFloat(activity);
+        HackUtil.setFloat(activity);
     }
     public void start3dmWeb(View view){
-        DebugUtil.start3dmWeb3(activity);
+        HackUtil.start3dmWeb3(activity);
     }
 }

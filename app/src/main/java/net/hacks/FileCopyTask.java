@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.os.AsyncTask;
 import android.util.Log;

@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -58,7 +58,7 @@ public  class UnZipTask extends AsyncTask<ZipFile, Long, Long> {
 
     protected void onPostExecute(Long result) {
         super.onPostExecute(result);
-        DebugHandler.instance().sendEmptyMessage(12362);
+        HackHandler.instance().sendEmptyMessage(12362);
     }
 
     protected void onProgressUpdate(Long... values) {
@@ -68,6 +68,6 @@ public  class UnZipTask extends AsyncTask<ZipFile, Long, Long> {
         Message message =Message.obtain();
         message.what=12361;
         message.obj=getjindu;
-        DebugHandler.instance().sendMessage(message);
+        HackHandler.instance().sendMessage(message);
     }
 }

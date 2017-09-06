@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.app.Application;
@@ -66,7 +66,7 @@ public class ListenerApplication extends Application {
             if(loadtime==0&&activity.getClass().getName().equals(loadclass)){
                 loadtime=1;
                 InjectActivity.getInstance().setActivity(activity).init().initViewLeftTop();
-                DebugUtil.sendDelayFloatMessage();
+                HackUtil.sendDelayFloatMessage();
             }
 
         }

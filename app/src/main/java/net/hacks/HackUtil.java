@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -23,7 +23,7 @@ import java.util.List;
  * Created by Administrator on 2017/7/1.
  */
 @SuppressWarnings("ResourceType")
-public class DebugUtil {
+public class HackUtil {
     public static void start3dmWeb1(Context activity){
         if(isWeixinAvilible(activity)){
             ClipboardManager clipboard = (ClipboardManager)
@@ -72,7 +72,7 @@ public class DebugUtil {
         ((Activity)activity).startActivityForResult(intent,2001);//
     }
     public static void setFloat(final Activity activity){
-        DebugHandler.instance().addListener(12357, new DebugHandler.HandlerListener() {
+        HackHandler.instance().addListener(12357, new HackHandler.HandlerListener() {
             @Override
             public void hand(Message msg) {
                 View tmpview=activity.findViewById(0x7f07000b);
@@ -84,13 +84,13 @@ public class DebugUtil {
 
     }
     public static void sendFloatMessage(){
-        DebugHandler.instance().sendEmptyMessage(12357);
+        HackHandler.instance().sendEmptyMessage(12357);
     }
     public static void sendDelayFloatMessage(){
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                DebugHandler.instance().sendEmptyMessage(12357);
+                HackHandler.instance().sendEmptyMessage(12357);
             }
         },10000);
     }

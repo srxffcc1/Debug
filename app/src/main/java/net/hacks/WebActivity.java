@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -114,7 +114,7 @@ public class WebActivity extends Activity {
         webView.destroy();
     }
     public void startWeiXin() {
-        DebugUtil.start3dmWeb1(this);
+        HackUtil.start3dmWeb1(this);
         finish();
     }
 }

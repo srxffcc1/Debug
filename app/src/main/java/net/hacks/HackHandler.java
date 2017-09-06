@@ -1,4 +1,4 @@
-package com.debugapplication;
+package net.hacks;
 
 import android.os.Handler;
 import android.os.Message;
@@ -10,7 +10,7 @@ import java.util.Map;
  * Created by King6rf on 2017/7/6.
  */
 
-public class DebugHandler {
+public class HackHandler {
     private static Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -28,26 +28,26 @@ public class DebugHandler {
     public interface HandlerListener {
         void hand(Message msg);
     }
-    private static final DebugHandler instance=new DebugHandler();
-    private DebugHandler(){
+    private static final HackHandler instance=new HackHandler();
+    private HackHandler(){
     }
-    public static DebugHandler instance(){
+    public static HackHandler instance(){
         return instance;
     }
-    public  DebugHandler sendMessage(Message msg){
+    public HackHandler sendMessage(Message msg){
         handler.sendMessage(msg);
         return instance;
     }
-    public  DebugHandler sendEmptyMessage(int what){
+    public HackHandler sendEmptyMessage(int what){
         handler.sendEmptyMessage(what);
         return instance;
     }
-    public  DebugHandler addListener(int key,HandlerListener value){
+    public HackHandler addListener(int key, HandlerListener value){
 //        Log.v("DebugHandler","注册:"+key);
         handlerListenerMap.put(key,value);
         return instance;
     }
-    public  DebugHandler removeListener(int... key){
+    public HackHandler removeListener(int... key){
 //        Log.v("DebugHandler","移除:"+key);
         for (int i : key) {
             handlerListenerMap.remove(i);
