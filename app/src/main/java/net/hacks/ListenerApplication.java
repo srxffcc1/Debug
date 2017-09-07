@@ -14,6 +14,7 @@ import android.util.Log;
 public class ListenerApplication extends Application {
     public int loadtime=0;
     private String loadclass;
+    private String need="";
 
     @Override
     public void onCreate() {
@@ -23,8 +24,10 @@ public class ListenerApplication extends Application {
         try {
             ApplicationInfo appInfo = this.getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             loadclass = appInfo.metaData.getString("loadclass");
+            need = appInfo.metaData.getString("need");
             if(loadclass.startsWith(".")){
                 loadclass=getPackageName()+loadclass;
+
             }
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -65,8 +68,11 @@ public class ListenerApplication extends Application {
             Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityStarted");
             if(loadtime==0&&activity.getClass().getName().equals(loadclass)){
                 loadtime=1;
-                InjectActivity.getInstance().setActivity(activity).init().initViewLeftTop();
-                HackUtil.sendDelayFloatMessage();
+                if(need.equals("srx")){
+                    InjectActivity.getInstance().setActivity(activity).init().initViewLeftTop();
+                    HackUtil.sendDelayFloatMessage();
+                }
+
             }
 
         }
