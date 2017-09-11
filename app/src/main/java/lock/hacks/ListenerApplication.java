@@ -44,18 +44,7 @@ public class ListenerApplication extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        loadtime=0;
-    }
-
-    @Override
-    public void onTrimMemory(int level) {
-        super.onTrimMemory(level);
-        loadtime=0;
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
+        Log.i("ActivityCallbacks", "结束清理");
         loadtime=0;
     }
 
@@ -63,8 +52,8 @@ public class ListenerApplication extends Application {
 
         @Override
         public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-
             Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityCreated");
+
 
         }
 
@@ -79,6 +68,7 @@ public class ListenerApplication extends Application {
                 }
 
             }
+
 
         }
 
@@ -107,6 +97,10 @@ public class ListenerApplication extends Application {
 
         @Override
         public void onActivityDestroyed(Activity activity) {
+            if(activity.isTaskRoot()){
+                Log.i("ActivityCallbacks", "还原");
+                loadtime=0;
+            }
             Log.i("ActivityCallbacks", activity.getClass().getSimpleName()+":"+"onActivityDestroyed");
         }
     }

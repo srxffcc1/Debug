@@ -115,6 +115,7 @@ public class InjectActivity {
         parent.addView(backlinear);
         parent.addView(dragLayout);
         ViewGroup viewGroup= (ViewGroup) activity.findViewById(android.R.id.content);
+        parent.setId(980122);
         viewGroup.addView(parent);
         onCreateEnd();
     }
@@ -172,6 +173,7 @@ public class InjectActivity {
         viewGroup.addView(parent);
         onCreateEnd();
     }
+
 
     private void onCreateEnd() {
         new Handler().postDelayed(new Runnable() {

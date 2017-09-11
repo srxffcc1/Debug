@@ -1,9 +1,7 @@
 package lock;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 
 import com.ssicosm.slime_great_war.R;
@@ -13,7 +11,7 @@ import com.ssicosm.slime_great_war.R;
  * Created by Administrator on 2017/6/4.
  */
 
-public class UnityPlayerActivity extends Activity {
+public class UnityPlayerActivity2 extends Activity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.main);
@@ -21,12 +19,6 @@ public class UnityPlayerActivity extends Activity {
 //        InjectActivity.getInstance().setActivity(this).init().initViewLeftTop();
 //        HackUtil.sendDelayFloatMessage();
 //        HackLog.tip0();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(UnityPlayerActivity.this,UnityPlayerActivity2.class));
-            }
-        },2000);
     }
     static String getStatusString(int statusCode) {
        return "SUCCESS";
