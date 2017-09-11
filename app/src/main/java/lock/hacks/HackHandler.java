@@ -1,4 +1,4 @@
-package net.hacks;
+package lock.hacks;
 
 import android.os.Handler;
 import android.os.Message;

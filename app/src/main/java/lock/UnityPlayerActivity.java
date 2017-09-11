@@ -1,11 +1,11 @@
-package net;
+package lock;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import net.hacks.HackLog;
-import net.hacks.HackUtil;
-import net.hacks.InjectActivity;
+import lock.hacks.HackLog;
+import lock.hacks.HackUtil;
+import lock.hacks.InjectActivity;
 
 
 /**

@@ -1,4 +1,4 @@
-package net.hacks;
+package lock.hacks;
 
 import android.app.Activity;
 import android.os.AsyncTask;

@@ -1,10 +1,12 @@
-package net.hacks;
+package lock.hacks;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 /**
@@ -35,7 +37,10 @@ public class ListenerApplication extends Application {
         CrashHelp.instance(this,null,"6bd6fe43d2");
         this.registerActivityLifecycleCallbacks(new BusinessActivityCallbacks());
     }
-
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
     @Override
     public void onTerminate() {
         super.onTerminate();

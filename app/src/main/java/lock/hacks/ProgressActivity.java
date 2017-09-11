@@ -1,4 +1,4 @@
-package net.hacks;
+package lock.hacks;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -73,7 +73,7 @@ public class ProgressActivity extends Activity {
         resigiter();
         if(new File(resultdir+needassetsstart+".obb").exists()){
             try {
-                startActivity(new Intent(ProgressActivity.this,Class.forName("net.UnityPlayerActivity")));
+                startActivity(new Intent(ProgressActivity.this,Class.forName("UnityPlayerActivity")));
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -157,7 +157,7 @@ public class ProgressActivity extends Activity {
                             FileUtil.delete(new File(tmpassetsdir));
                         }
                     }).start();
-                    startActivity(new Intent(ProgressActivity.this,Class.forName("net.UnityPlayerActivity")));
+                    startActivity(new Intent(ProgressActivity.this,Class.forName("UnityPlayerActivity")));
                     finish();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -174,7 +174,7 @@ public class ProgressActivity extends Activity {
                 bar.setProgress(1000);
                 try {
                     startExtrat();
-//                    startActivity(new Intent(ProgressActivity.this,Class.forName("net.UnityPlayerActivity")));
+//                    startActivity(new Intent(ProgressActivity.this,Class.forName("UnityPlayerActivity")));
 //                    finish();
                 } catch (Exception e) {
                     e.printStackTrace();

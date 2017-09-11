@@ -1,4 +1,4 @@
-package net.hacks;
+package lock.hacks;
 
 import java.io.File;
 
