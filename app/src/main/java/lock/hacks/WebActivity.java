@@ -40,7 +40,8 @@ public class WebActivity extends Activity {
         webSettings.setUseWideViewPort(true);//关键点
         webSettings.setLoadWithOverviewMode(true);
         if("".equals(url)||url==null){
-            url="http://app.3dmgame.com/news/13349.html";
+//            url="http://app.3dmgame.com/news/13349.html";
+            url="https://m.weibo.cn/p/1005052394486202";
 //            url="http://poe.17173.com/gj/mnq/3.0.shtml";
         }
 
