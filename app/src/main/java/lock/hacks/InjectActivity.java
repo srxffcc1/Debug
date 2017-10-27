@@ -69,7 +69,7 @@ public class InjectActivity {
         LinearLayout backlinear=new LinearLayout(activity);
         backlinear.setId(0x7f07000a);
         backlinear.setOrientation(LinearLayout.VERTICAL);
-        boolean islandscape=true;
+        boolean islandscape=false;
         if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             Log.i("info", "landscape");
             islandscape=true;
@@ -127,7 +127,7 @@ public class InjectActivity {
         LinearLayout backlinear=new LinearLayout(activity);
         backlinear.setId(0x7f07000a);
         backlinear.setOrientation(LinearLayout.VERTICAL);
-        boolean islandscape=true;
+        boolean islandscape=false;
         if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             Log.i("info", "landscape");
             islandscape=true;

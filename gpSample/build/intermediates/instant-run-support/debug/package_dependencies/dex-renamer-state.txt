@@ -1,0 +1,13 @@
+#Thu Oct 26 15:04:46 CST 2017
+renamed.3=classes4.dex
+renamed.2=classes.dex
+renamed.1=classes2.dex
+renamed.0=classes3.dex
+base.3=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\jcc-bate-0.7.3_fff0475adbc42717a9a286878df4ec035516818e
+base.2=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_04737e32e2089af6523723bb9af5f857919d7442
+base.1=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\commons-lang-2.6_969a1ed4baf1d79b3f3551ff2a031ea8d3b73a52
+base.0=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\gprinter-2.1.3_87ec3131e8b9b259ffb31921073f676b36b46ad8
+file.3=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\jcc-bate-0.7.3_fff0475adbc42717a9a286878df4ec035516818e\\classes.dex
+file.2=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_04737e32e2089af6523723bb9af5f857919d7442\\classes.dex
+file.1=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\commons-lang-2.6_969a1ed4baf1d79b3f3551ff2a031ea8d3b73a52\\classes.dex
+file.0=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\gprinter-2.1.3_87ec3131e8b9b259ffb31921073f676b36b46ad8\\classes.dex
