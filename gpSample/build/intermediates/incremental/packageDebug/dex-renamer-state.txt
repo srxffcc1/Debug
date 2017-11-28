@@ -1,7 +1,4 @@
-#Thu Oct 26 15:08:12 CST 2017
-base.0=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_23a944b9acaa679265c48b4f178361ee4c2f97a1
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_2880923306fbab6dba2abd10ee27862b4484ce83\\classes.dex
-base.1=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_2880923306fbab6dba2abd10ee27862b4484ce83
-file.0=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_23a944b9acaa679265c48b4f178361ee4c2f97a1\\classes.dex
+#Fri Nov 10 14:21:02 CST 2017
+base.0=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\AppHook\\Debug\\gpSample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

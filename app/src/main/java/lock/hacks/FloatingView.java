@@ -104,14 +104,15 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     protected void onDraw(Canvas canvas) {
         if(needdrawsrc){
             super.onDraw(canvas);
+            if (isSetColor && mDeleteColor != 0) {
+                mBitmap = createLayerDrawable(mDeleteColor);
+            }else{
+                mBitmap = createLayerDrawable();
+            }
+            mMatrix.setTranslate(mWidth - mBitmapHeight, dip2px(mContext, 4));
+            canvas.drawBitmap(mBitmap, mMatrix, mPaint);
         }
-        if (isSetColor && mDeleteColor != 0) {
-            mBitmap = createLayerDrawable(mDeleteColor);
-        }else{
-            mBitmap = createLayerDrawable();
-        }
-        mMatrix.setTranslate(mWidth - mBitmapHeight, dip2px(mContext, 4));
-        canvas.drawBitmap(mBitmap, mMatrix, mPaint);
+
     }
     @Override
     protected void onDetachedFromWindow() {
