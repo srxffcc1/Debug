@@ -117,7 +117,6 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-
     }
     @Override
     public boolean onTouchEvent(MotionEvent event) {
