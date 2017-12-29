@@ -77,7 +77,7 @@ public class InjectActivity {
             Log.i("info", "portrait");
         }
 
-        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape?"d3mbackh.jpg":"d3mbackv.jpg"));
+        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape?"d3mbackh.png":"d3mbackv.png"));
         backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         TextView textView1=new TextView(activity);
         textView1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0,1));
@@ -135,7 +135,7 @@ public class InjectActivity {
             Log.i("info", "portrait");
         }
 
-        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape?"d3mbackh.jpg":"d3mbackv.jpg"));
+        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape?"d3mbackh.png":"d3mbackv.png"));
         backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         TextView textView1=new TextView(activity);
         textView1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,0,1));
