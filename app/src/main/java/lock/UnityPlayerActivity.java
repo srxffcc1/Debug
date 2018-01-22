@@ -21,6 +21,8 @@ public class UnityPlayerActivity extends Activity {
         Log.i("ActivityCallbacks", "mainActivityCreate");
         InjectActivity.getInstance().setActivity(this).init().initViewLeftBootom();
         HackUtil.sendDelayFloatMessage();
+//        Task.initViewLeftTop(this);
+//        Task.initViewLeftBootom(this);
     }
 
 }
