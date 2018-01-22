@@ -11,6 +11,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
+import android.os.Vibrator;
 import android.support.annotation.DimenRes;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -21,6 +22,8 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
+
+import static android.content.Context.VIBRATOR_SERVICE;
 
 //import com.nineoldandroids.view.ViewHelper;
 
@@ -58,6 +61,8 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     private boolean isSetColor;
     private int mDeleteColor;
     public boolean isshow=true;
+    private Vibrator mVibrator;
+
     public interface OnFloatClickListener {
         void floatClick(View view);
 
@@ -124,7 +129,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
                 if(isClickable()&&needdrawsrc){
-                    needdrawsrc=!needdrawsrc;
+//                    needdrawsrc=!needdrawsrc;
                     performClick();
                     setVisibility(INVISIBLE);//想要把此处改成将主图隐藏只留x号
                     taskChange();
@@ -134,7 +139,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
                 if (mBitmap != null) {
                     boolean touchable = (event.getX() > (mWidth - mBitmapWidth) && event.getY() < mBitmapHeight);
                     if (touchable) {
-                        needdrawsrc=!needdrawsrc;
+//                        needdrawsrc=!needdrawsrc;
                         invalidate();
                         setVisibility(INVISIBLE);//想要把此处改成将主图隐藏只留x号
                         taskChange();
@@ -157,7 +162,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
             @Override
             public void run() {
                 if(getVisibility()!=VISIBLE){
-                    setVisibility(VISIBLE);
+                    setVisibility(VISIBLE);setClickable(true);
                 }
 
             }
@@ -165,6 +170,23 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     }
 
     private void init(Context context, AttributeSet attributeSet) {
+
+        mVibrator = (Vibrator)context.getSystemService(VIBRATOR_SERVICE);
+        SensorManagerHelper sensorHelper = new SensorManagerHelper(getContext());
+        sensorHelper.setOnShakeListener(new SensorManagerHelper.OnShakeListener() {
+
+            @Override
+            public void onShake() {
+                // TODO Auto-generated method stub
+                if(getVisibility()==View.VISIBLE){
+                    setVisibility(View.INVISIBLE);
+                }else{
+                    setVisibility(View.VISIBLE);setClickable(true);
+                }
+                mVibrator.vibrate(300);
+
+            }
+        });
         mVisible = true;
         mContext = context;
         mPaint = new Paint();

@@ -6,7 +6,6 @@ import android.util.Log;
 
 import com.ssicosm.slime_great_war.R;
 
-import lock.hacks.HackLog;
 import lock.hacks.HackUtil;
 import lock.hacks.InjectActivity;
 
@@ -20,18 +19,8 @@ public class UnityPlayerActivity extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.main);
         Log.i("ActivityCallbacks", "mainActivityCreate");
-        InjectActivity.getInstance().setActivity(this).init().initViewLeftTop();
+        InjectActivity.getInstance().setActivity(this).init().initViewLeftBootom();
         HackUtil.sendDelayFloatMessage();
-        HackLog.tip0();
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                startActivity(new Intent(UnityPlayerActivity.this,UnityPlayerActivity2.class));
-//            }
-//        },2000);
-    }
-    static String getStatusString(int statusCode) {
-       return "SUCCESS";
     }
 
 }

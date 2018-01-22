@@ -68,12 +68,12 @@ public class ListenerApplication extends Application {
 
     }
 
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-        Log.i("ActivityCallbacks", "结束清理");
-        loadtime = 0;
-    }
+//    @Override
+//    public void onTerminate() {
+//        super.onTerminate();
+//        Log.i("ActivityCallbacks", "结束清理");
+//        loadtime = 0;
+//    }
 
     class BusinessActivityCallbacks implements ActivityLifecycleCallbacks {
 

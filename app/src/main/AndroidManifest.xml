@@ -4,15 +4,14 @@
     package="com.ssicosm.slime_great_war">
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <!--<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>-->
 
     <!--往sdcard中写入数据的权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <!--在sdcard中创建/删除文件的权限 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
-
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
     <application
-        android:name="lock.hacks.MuApplication"
         android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,8 +20,13 @@
         >
         <meta-data android:name="loadclass" android:value="lock.UnityPlayerActivity"/>
         <meta-data android:name="need" android:value="srxs"/>
-        <activity android:name="lock.UnityPlayerActivity" android:screenOrientation="landscape"  >
+        <activity android:name="lock.UnityPlayerActivity" android:screenOrientation="portrait"  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
+            </intent-filter>
 
         </activity>
         <activity android:name="lock.hacks.WebActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -43,17 +47,16 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name="lock.hacks.SplashActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name="lock.UnityPlayerActivity2" />
         <activity android:name="lock.TestActivity" >
 
         </activity>
     </application>
-    <uses-permission android:name="com.tencent.mm.permission.GET_QRCODE_INFO"/>
 </manifest>
