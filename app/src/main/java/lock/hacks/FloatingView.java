@@ -165,20 +165,20 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
             public void run() {
                     FloatingView.super.setVisibility(View.INVISIBLE);
             }
-        },Integer.parseInt("25000"));
+        },Integer.parseInt("15000"));
     }
 
     private void taskChange() {
-//        postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                if(getVisibility()!=VISIBLE){
-//                    setVisibility(VISIBLE);
-//                    setClickable                                                                                                                      (true);
-//                }
-//
-//            }
-//        },Integer.parseInt("25000"));
+        postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(getVisibility()!=VISIBLE){
+                    setVisibility(VISIBLE);
+                    setClickable(true);
+                }
+
+            }
+        },Integer.parseInt("1200000"));
     }
 
     private void init(Context context, AttributeSet attributeSet) {
