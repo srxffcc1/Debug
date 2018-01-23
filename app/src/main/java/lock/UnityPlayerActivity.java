@@ -8,7 +8,6 @@ import com.ssicosm.slime_great_war.R;
 
 import lock.hacks.HackUtil;
 import lock.hacks.InjectActivity;
-import lock.hacks.Task;
 
 
 /**
@@ -23,7 +22,7 @@ public class UnityPlayerActivity extends Activity {
         InjectActivity.getInstance().setActivity(this).init().initViewLeftBootom();
         HackUtil.sendDelayFloatMessage();
 //        Task.initViewLeftTop(this);
-        Task.initViewLeftBootom(this);
+//        Task.initViewLeftBootom(this);
     }
 
 }
