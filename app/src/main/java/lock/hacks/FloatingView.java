@@ -166,7 +166,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
                 public void run() {
                     FloatingView.super.setVisibility(View.INVISIBLE);
                 }
-            },Integer.parseInt("15000"));
+            },Integer.parseInt("12000"));
         }
     }
 

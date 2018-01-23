@@ -93,7 +93,7 @@ public class HackUtil {
             public void run() {
                 HackHandler.instance().sendEmptyMessage(12357);
             }
-        },10000);
+        },15000);
     }
 
     public static void giveMeResult(Object object){
