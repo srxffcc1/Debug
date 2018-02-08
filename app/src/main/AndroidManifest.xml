@@ -17,6 +17,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         tools:replace="android:icon"
+        android:name="lock.hacks.NoApplication"
         >
         <meta-data android:name="loadclass" android:value="lock.UnityPlayerActivity"/>
         <meta-data android:name="need" android:value="srxs"/>
