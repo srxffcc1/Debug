@@ -84,11 +84,13 @@ public class DragLayout extends RelativeLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        System.out.println("Drag.onInterceptTouchEvent");
         return mDragger.shouldInterceptTouchEvent(ev);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        System.out.println("Drag.onTouchEvent");
 //        if(clicktime==0){
 //            DebugUtil.sendDelayFloatMessage();
 //            clicktime=-1;
@@ -99,7 +101,9 @@ public class DragLayout extends RelativeLayout {
 
     @Override
     public void computeScroll() {
+        System.out.println("Drag.computeScroll");
         if (mDragger.continueSettling(true)) {
+            System.out.println("Drag.continueSettling");
             invalidate();
         }
     }

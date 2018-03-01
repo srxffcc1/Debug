@@ -1,6 +1,7 @@
 package lock;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,4 +36,8 @@ public class UnityPlayerActivity2 extends Activity {
         intent.setData(content_url);
         activity.startActivity(intent);
     }
+    private boolean checkContext(Context context) {
+            return false;
+    }
+
 }
