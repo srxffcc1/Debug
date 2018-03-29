@@ -22,12 +22,7 @@
         <meta-data android:name="loadclass" android:value="lock.UnityPlayerActivity"/>
         <meta-data android:name="need" android:value="srxs"/>
         <activity android:name="lock.UnityPlayerActivity" android:screenOrientation="portrait"  >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
-            </intent-filter>
 
         </activity>
         <activity android:name="lock.hacks.WebActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -55,7 +50,14 @@
                 <!--&lt;!&ndash;<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>&ndash;&gt;-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name="lock.UnityPlayerActivity2" />
+        <activity android:name="lock.UnityPlayerActivity2" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--<data android:host="UnityPlayerActivity" android:scheme="com.unity3d.player"/>-->
+            </intent-filter>
+        </activity>
         <activity android:name="lock.TestActivity" >
 
         </activity>

@@ -29,6 +29,7 @@ NativeActivity会导致上层控件的点击事件出现异常//可以改为继�
 invoke-static {}, Lnet/hacks/HackLog;->tip0()V
 
 
+        android:debuggable="true"
 
 
 

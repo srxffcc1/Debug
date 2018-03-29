@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.ssicosm.slime_great_war.R;
 
+import lock.hacks.HackUtil;
 import lock.hacks.InjectActivity;
 
 
@@ -18,8 +19,8 @@ public class UnityPlayerActivity extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.main);
         Log.i("ActivityCallbacks", "mainActivityCreate");
-        InjectActivity.getInstance().setActivity(this).init().initBackNotDismiss();
-//        HackUtil.sendDelayFloatMessage();
+        InjectActivity.getInstance().setActivity(this).init().initViewLeftBootom();
+        HackUtil.sendDelayFloatMessage();
 //        Task.initViewLeftTop(this);
 //        Task.initViewLeftBootom(this);
     }
