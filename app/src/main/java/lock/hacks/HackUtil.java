@@ -87,14 +87,17 @@ public class HackUtil {
     public static void sendFloatMessage(){
         HackHandler.instance().sendEmptyMessage(12357);
     }
-    public static void sendDelayFloatMessage(){
+    public static void sendDelayFloatMessage() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 HackHandler.instance().sendEmptyMessage(12357);
             }
-        },15000);
+        }, 15000);
     }
+
+
+
 
     public static void giveMeResult(Object object){
         KeyEvent event= (KeyEvent) object;

@@ -17,26 +17,26 @@ import android.widget.TextView;
  * Created by Administrator on 2017/7/9.
  */
 @SuppressWarnings("ResourceType")
-public class InjectActivity {
-    private static final InjectActivity instance = new InjectActivity();
+public class InjectActivityShowNow {
+    private static final InjectActivityShowNow instance = new InjectActivityShowNow();
     private Activity activity;
     private int inittimes = 0;
 
 
-    private InjectActivity() {
+    private InjectActivityShowNow() {
 
     }
 
-    public static InjectActivity getInstance() {
+    public static InjectActivityShowNow getInstance() {
         return instance;
     }
 
-    public InjectActivity setActivity(Activity activity) {
+    public InjectActivityShowNow setActivity(Activity activity) {
         this.activity = activity;
         return instance;
     }
 
-    public InjectActivity init() {
+    public InjectActivityShowNow init() {
         inittimes = 0;
         return instance;
     }
@@ -50,7 +50,7 @@ public class InjectActivity {
 
     }
 
-    public void initViewLeftBottom() {
+    public void initViewLeftBootom() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
             onCreateStartToReplaceSetContentViewLeftBottom(true, true, true);
@@ -65,16 +65,14 @@ public class InjectActivity {
             onCreateStartToReplaceSetContentViewLeftTop(false, true, true);
             inittimes++;
         }
-
     }
 
-    public void initViewLeftBottomNoBack() {
+    public void initViewLeftBootomNoBack() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
             onCreateStartToReplaceSetContentViewLeftBottom(false, true, true);
             inittimes++;
         }
-
     }
 
     public void initViewLeftTopNoFloat() {
@@ -83,16 +81,14 @@ public class InjectActivity {
             onCreateStartToReplaceSetContentViewLeftTop(true, false, true);
             inittimes++;
         }
-
     }
 
-    public void initViewLeftBottomNoFloat() {
+    public void initViewLeftBootomNoFloat() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
             onCreateStartToReplaceSetContentViewLeftBottom(true, false, true);
             inittimes++;
         }
-
     }
 
     public void initViewLeftTopNoDismiss() {
@@ -101,16 +97,14 @@ public class InjectActivity {
             onCreateStartToReplaceSetContentViewLeftTop(true, true, false);
             inittimes++;
         }
-
     }
 
-    public void initViewLeftBottomNoDismiss() {
+    public void initViewLeftBootomNoDismiss() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
             onCreateStartToReplaceSetContentViewLeftBottom(true, true, false);
             inittimes++;
         }
-
     }
 
     private void onCreateStartToReplaceSetContentViewLeftBottom(boolean needback, boolean needfloat, boolean needdismiss) {
@@ -128,7 +122,6 @@ public class InjectActivity {
         } else if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             Log.i("info", "portrait");
         }
-
         backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape ? "d3mbackh.png" : "d3mbackv.png"));
         backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         TextView textView1 = new TextView(activity);
@@ -154,10 +147,9 @@ public class InjectActivity {
             relayoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
             floatingView.setLayoutParams(relayoutParams);
             floatingView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            floatingView.setVisibility(View.INVISIBLE);
+            floatingView.setVisibility(View.VISIBLE);
             dragLayout.addView(floatingView);
         }
-
         backlinear.addView(textView1);
         backlinear.addView(d3mlogo);
         backlinear.addView(textView2);
@@ -167,14 +159,12 @@ public class InjectActivity {
 
             backlinear.setVisibility(View.GONE);
         }
-
         parent.addView(backlinear);
         parent.addView(dragLayout);
         ViewGroup viewGroup = (ViewGroup) activity.findViewById(android.R.id.content);
         parent.setId(980122);
         viewGroup.addView(parent);
         if (needdismiss) {
-
             onCreateEnd();
         }
     }
@@ -194,7 +184,6 @@ public class InjectActivity {
         } else if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             Log.i("info", "portrait");
         }
-
         backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape ? "d3mbackh.png" : "d3mbackv.png"));
         backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         TextView textView1 = new TextView(activity);
@@ -217,7 +206,7 @@ public class InjectActivity {
             floatingView.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity, "splash23dm.png"));
             floatingView.setLayoutParams(new LinearLayout.LayoutParams(430, 175));
             floatingView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            floatingView.setVisibility(View.INVISIBLE);
+            floatingView.setVisibility(View.VISIBLE);
             dragLayout.addView(floatingView);
         }
         backlinear.addView(textView1);
@@ -229,13 +218,11 @@ public class InjectActivity {
 
             backlinear.setVisibility(View.GONE);
         }
-
         parent.addView(backlinear);
         parent.addView(dragLayout);
         ViewGroup viewGroup = (ViewGroup) activity.findViewById(android.R.id.content);
         viewGroup.addView(parent);
         if (needdismiss) {
-
             onCreateEnd();
         }
     }

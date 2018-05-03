@@ -22,6 +22,7 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import static android.content.Context.VIBRATOR_SERVICE;
 
@@ -104,7 +105,7 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
 
 
     }
-    boolean needdrawsrc=true;
+    boolean needdrawsrc=false;//需要src
     @Override
     protected void onDraw(Canvas canvas) {
         if(needdrawsrc){
@@ -116,6 +117,8 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
             }
             mMatrix.setTranslate(mWidth - mBitmapHeight, dip2px(mContext, 4));
             canvas.drawBitmap(mBitmap, mMatrix, mPaint);
+        }else{
+            super.onDraw(canvas);
         }
 
     }
@@ -161,12 +164,16 @@ public class FloatingView extends ImageView implements ViewTreeObserver.OnGlobal
     public void setVisibility(int visibility) {
         super.setVisibility(visibility);
         if(visibility==View.VISIBLE){
+
             postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     FloatingView.super.setVisibility(View.INVISIBLE);
+
                 }
             },Integer.parseInt("12000"));
+        }else{
+            Toast.makeText(getContext(),"”摇一摇“可重新呼出悬浮菜单",Toast.LENGTH_SHORT).show();
         }
     }
 

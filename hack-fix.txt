@@ -1,5 +1,6 @@
 ﻿adb shell am start -D -n packageName/ActivityName-------------调试方式
 ---------------------------------------------------------------------------------------------------------------------去谷歌框架1
+下面的最好全局查找 
 #invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
 一般搜索Lcom/google/android/gms/common/api/GoogleApiClient$OnConnectionFailedListener;->onConnectionFailed(Lcom/google/android/gms/common/ConnectionResult;)V
 全局搜索上面这个东西注释掉 可以去框架弹窗可能会有变种“#”就是注释

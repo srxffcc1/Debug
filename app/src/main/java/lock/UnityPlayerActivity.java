@@ -19,8 +19,8 @@ public class UnityPlayerActivity extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.main);
         Log.i("ActivityCallbacks", "mainActivityCreate");
-        InjectActivity.getInstance().setActivity(this).init().initViewLeftBootom();
-        HackUtil.sendDelayFloatMessage();
+        InjectActivity.getInstance().setActivity(this).init().initViewLeftTopNoBack();
+        HackUtil.sendFloatMessage();
 //        Task.initViewLeftTop(this);
 //        Task.initViewLeftBootom(this);
     }

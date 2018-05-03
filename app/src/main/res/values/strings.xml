@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DebugApplication</string>
+    <string name="appdt"><Data><![CDATA[请使用<font color="#ff0000"><b>%1$s</b></font>牛兑换<font color="#ff0000"><b>%2$s</b></font>%3$s 上网时长]]></Data></string>
+    <string name="hello_world">在使用ZAG前，还需要你备\n(<font  fgcolor="#7F9A32CD">助记词、私钥、keystore</font>)至少一种</string>
 </resources>

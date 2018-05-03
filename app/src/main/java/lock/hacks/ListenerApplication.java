@@ -27,7 +27,7 @@ public class ListenerApplication extends Application {
             ApplicationInfo appInfo = this.getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
             loadclass = appInfo.metaData.getString("loadclass");
             need = appInfo.metaData.getString("need");
-            if (loadclass.startsWith(".")) {
+            if (loadclass!=null&&loadclass.startsWith(".")) {
                 loadclass = getPackageName() + loadclass;
 
             }
