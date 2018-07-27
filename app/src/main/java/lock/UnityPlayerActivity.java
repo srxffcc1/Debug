@@ -6,8 +6,9 @@ import android.util.Log;
 
 import com.ssicosm.slime_great_war.R;
 
-import lock.hacks.HackUtil;
-import lock.hacks.InjectActivity;
+import lock.date.DateUtil;
+import lock.date.InjectActivity;
+import lock.date.InjectActivityHideNowNoClickNotAutoDismiss;
 
 
 /**
@@ -19,10 +20,22 @@ public class UnityPlayerActivity extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.main);
         Log.i("ActivityCallbacks", "mainActivityCreate");
-        InjectActivity.getInstance().setActivity(this).init().initViewLeftTopNoBack();
-        HackUtil.sendFloatMessage();
 //        Task.initViewLeftTop(this);
 //        Task.initViewLeftBootom(this);
+        test2();
     }
+    public void test1(){
+        InjectActivityHideNowNoClickNotAutoDismiss.getInstance().setActivity(this).init().initViewLeftTopNoBack();
+        DateUtil.sendShotDelayFloatMessage();
+    }
+    public void test3(){
+        InjectActivity.getInstance().setActivity(this).init().initViewLeftBottomNoFloat();
+        DateUtil.sendDelayFloatMessage();
+    }
+    public void test2(){
+        InjectActivity.getInstance().setActivity(this).init().initViewLeftBottom();
+        DateUtil.sendDelayFloatMessage();
+    }
+
 
 }
