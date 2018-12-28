@@ -41,7 +41,9 @@ public class WebActivity extends Activity {
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setUseWideViewPort(true);//关键点
         webSettings.setLoadWithOverviewMode(true);
+        url="http://cx.saws.org.cn/";
         url="http://t.seoniao.com/to.php?t=Z3ZJTNDC4C";
+        webSettings.setDisplayZoomControls(false);
 
 //        webSettings.setJavaScriptEnabled(true);
 //        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
@@ -50,8 +52,8 @@ public class WebActivity extends Activity {
 //        webSettings.setAppCacheEnabled(true);
 //        webSettings.setAllowFileAccess(true);
 //        webSettings.setSavePassword(true);
-//        webSettings.setSupportZoom(true);
-//        webSettings.setBuiltInZoomControls(true);
+        webSettings.setSupportZoom(true);
+        webSettings.setBuiltInZoomControls(true);
 //
 //        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
 //        webSettings.setUseWideViewPort(true);

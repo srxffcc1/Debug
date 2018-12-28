@@ -40,7 +40,23 @@ public class InjectActivityShowNow {
         inittimes = 0;
         return instance;
     }
+    public void initViewRightTop() {
+        if (inittimes == 0) {
+            Log.v("InjectActivity", "进入");
+            onCreateStartToReplaceSetContentViewRightTop(true, true, true);
+            inittimes++;
+        }
 
+    }
+
+    public void initViewRightBottom() {
+        if (inittimes == 0) {
+            Log.v("InjectActivity", "进入");
+            onCreateStartToReplaceSetContentViewRightBottom(true, true, true);
+            inittimes++;
+        }
+
+    }
     public void initViewLeftTop() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
@@ -59,26 +75,10 @@ public class InjectActivityShowNow {
 
     }
 
-    public void initViewLeftTopNoBack() {
-        if (inittimes == 0) {
-            Log.v("InjectActivity", "进入");
-            onCreateStartToReplaceSetContentViewLeftTop(false, true, true);
-            inittimes++;
-        }
-    }
-
     public void initViewLeftBootomNoBack() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
             onCreateStartToReplaceSetContentViewLeftBottom(false, true, true);
-            inittimes++;
-        }
-    }
-
-    public void initViewLeftTopNoFloat() {
-        if (inittimes == 0) {
-            Log.v("InjectActivity", "进入");
-            onCreateStartToReplaceSetContentViewLeftTop(true, false, true);
             inittimes++;
         }
     }
@@ -91,14 +91,6 @@ public class InjectActivityShowNow {
         }
     }
 
-    public void initViewLeftTopNoDismiss() {
-        if (inittimes == 0) {
-            Log.v("InjectActivity", "进入");
-            onCreateStartToReplaceSetContentViewLeftTop(true, true, false);
-            inittimes++;
-        }
-    }
-
     public void initViewLeftBootomNoDismiss() {
         if (inittimes == 0) {
             Log.v("InjectActivity", "进入");
@@ -106,7 +98,128 @@ public class InjectActivityShowNow {
             inittimes++;
         }
     }
+    private void onCreateStartToReplaceSetContentViewRightTop(boolean needback, boolean needfloat, boolean needdismiss) {
+        FrameLayout parent = new FrameLayout(activity);
+        DragLayout dragLayout = new DragLayout(activity);
+        dragLayout.setBackgroundColor(Color.parseColor("#00000000"));
+        dragLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        LinearLayout backlinear = new LinearLayout(activity);
+        backlinear.setId(0x7f07000a);
+        backlinear.setOrientation(LinearLayout.VERTICAL);
+        boolean islandscape = false;
+        if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Log.i("info", "landscape");
+            islandscape = true;
+        } else if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Log.i("info", "portrait");
+        }
+        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape ? "d3mbackh.png" : "d3mbackv.png"));
+        backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView textView1 = new TextView(activity);
+        textView1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+        TextView textView2 = new TextView(activity);
+        textView2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+        ImageView d3mlogo = new ImageView(activity);
+        d3mlogo.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+        d3mlogo.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        d3mlogo.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity, "d3mlogo.png"));
+        if (needfloat) {
+            FloatingView floatingView = new FloatingView(activity);
+            floatingView.setId(0x7f07000b);
+            floatingView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start3dmWeb(v);
+                }
+            });
+            floatingView.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity, "splash23dm.png"));
+            RelativeLayout.LayoutParams relayoutParams = new RelativeLayout.LayoutParams(430, 175);
+            relayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            relayoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+            floatingView.setLayoutParams(relayoutParams);
+            floatingView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            floatingView.setVisibility(View.VISIBLE);
+            dragLayout.addView(floatingView);
+        }
+        backlinear.addView(textView1);
+        backlinear.addView(d3mlogo);
+        backlinear.addView(textView2);
+        if (needback) {
+            backlinear.setVisibility(View.VISIBLE);
+        } else {
 
+            backlinear.setVisibility(View.GONE);
+        }
+        parent.addView(backlinear);
+        parent.addView(dragLayout);
+        ViewGroup viewGroup = (ViewGroup) activity.findViewById(android.R.id.content);
+        parent.setId(980122);
+        viewGroup.addView(parent);
+        if (needdismiss) {
+            onCreateEnd();
+        }
+    }
+    private void onCreateStartToReplaceSetContentViewRightBottom(boolean needback, boolean needfloat, boolean needdismiss) {
+        FrameLayout parent = new FrameLayout(activity);
+        DragLayout dragLayout = new DragLayout(activity);
+        dragLayout.setBackgroundColor(Color.parseColor("#00000000"));
+        dragLayout.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        LinearLayout backlinear = new LinearLayout(activity);
+        backlinear.setId(0x7f07000a);
+        backlinear.setOrientation(LinearLayout.VERTICAL);
+        boolean islandscape = false;
+        if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Log.i("info", "landscape");
+            islandscape = true;
+        } else if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Log.i("info", "portrait");
+        }
+        backlinear.setBackground(ImageUtilz.loadImageFromAsserts(activity, islandscape ? "d3mbackh.png" : "d3mbackv.png"));
+        backlinear.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        TextView textView1 = new TextView(activity);
+        textView1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+        TextView textView2 = new TextView(activity);
+        textView2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+        ImageView d3mlogo = new ImageView(activity);
+        d3mlogo.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 1));
+        d3mlogo.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        d3mlogo.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity, "d3mlogo.png"));
+        if (needfloat) {
+            FloatingView floatingView = new FloatingView(activity);
+            floatingView.setId(0x7f07000b);
+            floatingView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    start3dmWeb(v);
+                }
+            });
+            floatingView.setImageDrawable(ImageUtilz.loadImageFromAsserts(activity, "splash23dm.png"));
+            RelativeLayout.LayoutParams relayoutParams = new RelativeLayout.LayoutParams(430, 175);
+            relayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            relayoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+            floatingView.setLayoutParams(relayoutParams);
+            floatingView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            floatingView.setVisibility(View.VISIBLE);
+            dragLayout.addView(floatingView);
+        }
+        backlinear.addView(textView1);
+        backlinear.addView(d3mlogo);
+        backlinear.addView(textView2);
+        if (needback) {
+            backlinear.setVisibility(View.VISIBLE);
+        } else {
+
+            backlinear.setVisibility(View.GONE);
+        }
+        parent.addView(backlinear);
+        parent.addView(dragLayout);
+        ViewGroup viewGroup = (ViewGroup) activity.findViewById(android.R.id.content);
+        parent.setId(980122);
+        viewGroup.addView(parent);
+        if (needdismiss) {
+            onCreateEnd();
+        }
+    }
     private void onCreateStartToReplaceSetContentViewLeftBottom(boolean needback, boolean needfloat, boolean needdismiss) {
         FrameLayout parent = new FrameLayout(activity);
         DragLayout dragLayout = new DragLayout(activity);

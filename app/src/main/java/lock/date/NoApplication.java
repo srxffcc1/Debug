@@ -13,6 +13,6 @@ public class NoApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         applicationcontext=base;
-        StringConvert.init(base);
+//        StringConvert.init(base);
     }
 }
